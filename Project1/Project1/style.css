@@ -1,9 +1,11 @@
-﻿* {
+﻿/* RESET */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* FONTS */
 @font-face {
     font-family: 'Bestime';
     src: url('Bestime.ttf') format('truetype');
@@ -21,8 +23,10 @@
 
 body {
     font-family: 'Caviar', sans-serif;
+    scroll-behavior: smooth;
 }
 
+/* HEADER */
 header {
     background-color: #f5f5f5;
     padding: 10px 0;
@@ -30,7 +34,6 @@ header {
     height: 60px;
 }
 
-/* Image tout à gauche */
 .logoSiteElouan {
     height: 50px;
     position: absolute;
@@ -39,19 +42,23 @@ header {
     transform: translateY(-50%);
 }
 
-/* Menu hamburger caché par défaut */
 .menu-hamburger {
     height: 30px;
-    display: none; /* Caché par défaut sur desktop */
+    display: none;
     position: absolute;
     right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 
-/* Liens centrés au milieu du header */
 .nav-links {
     display: flex;
     justify-content: center;
     width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
     .nav-links ul {
@@ -65,9 +72,7 @@ header {
             text-decoration: none;
             color: #333;
             font-family: 'Caviar', sans-serif;
-            font-weight: normal;
             transition: all 0.2s ease-in-out;
-            display: inline-block;
             padding: 8px 16px;
             border-bottom: 2px solid transparent;
         }
@@ -77,96 +82,103 @@ header {
                 font-weight: bold;
             }
 
-/* Styles pour les petites tailles (mobile) */
 @media screen and (max-width: 768px) {
+    .menu-hamburger {
+        display: block;
+    }
+
     .nav-links ul {
-        display: none; /* Cacher les liens par défaut */
+        display: none;
         position: fixed;
-        top: 50%; /* Centrer le menu verticalement */
-        left: 50%; /* Centrer horizontalement */
-        transform: translate(-50%, -50%); /* Ajuster pour être parfaitement centré */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         flex-direction: column;
         gap: 20px;
         background-color: #f5f5f5;
         padding: 20px;
         border-radius: 5px;
-        z-index: 1000; /* S'assurer que le menu soit au-dessus des autres éléments */
+        z-index: 1000;
     }
 
         .nav-links ul li a {
             font-size: 20px;
-            color: #333;
         }
 
-    /* Affichage du menu hamburger */
-    .menu-hamburger {
-        display: block; /* Afficher l'icône du menu */
-        cursor: pointer; /* Indiquer que l'icône est cliquable */
-        height: 50px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    /* Lorsque la classe 'active' est ajoutée, les liens s'affichent */
     .nav-links.active ul {
-        display: flex; /* Afficher les liens lorsqu'on clique sur le menu */
+        display: flex;
     }
 }
-
 /* ABOUT */
 #about {
     display: flex;
-    height: auto; /* <-- Hauteur dynamique */
-    min-height: 40vh; /* <-- Garde quand même un peu d'espace */
+    flex-wrap: wrap;
     background-color: #fafafa;
     padding: 0 20px;
+    min-height: 40vh;
 }
 
-/* Partie gauche */
-.about-left {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.centered-text {
-    text-align: center;
-}
-
-    .centered-text h2 {
-        font-size: 1.5rem;
-        color: #333;
-        margin-bottom: 10px;
-    }
-
-    .centered-text h1 {
-        font-size: 2.5rem;
-        color: #222;
-        font-weight: bold;
-        letter-spacing: 2px;
-    }
-
-/* Partie droite */
+.about-left,
 .about-right {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     padding: 30px;
 }
 
-.about-text {
+.about-left {
+    flex: 1; /* 1 part */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-right {
+    flex: 2; /* 2 parts */
+}
+
+.centered-text h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.centered-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+.about-text p {
     font-size: 1.2rem;
     color: #555;
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .cv-btn-wrapper {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding-bottom: 10px;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-top: 10px;
+}
+
+.cv-and-icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.icon-links {
+    display: flex;
+    gap: 15px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.cv-btn-wrapper a {
+    margin-right: 20px;
 }
 
 .download-btn {
@@ -176,21 +188,28 @@ header {
     font-size: 1rem;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Ajoute transform ici */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
     .download-btn:hover {
         background-color: #555;
-        transform: scale(1.05); /* Légère augmentation (5%) */
+        transform: scale(1.05);
     }
 
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
 
-/* Responsive */
+    .social-icon:hover {
+        transform: scale(1.1);
+    }
+
 @media screen and (max-width: 768px) {
     #about {
         flex-direction: column;
-        height: auto;
-        text-align: center;
     }
 
     .about-left,
@@ -204,38 +223,131 @@ header {
     }
 }
 
-.cv-btn-wrapper {
+/* TOOLS & EXPERIENCES */
+.tools-experiences-section {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-bottom: 20px;
-    width: 100%;
-}
-
-.cv-and-icons {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 30px;
+    background-color: #fafafa;
+    padding: 0 20px;
 }
 
-.icon-links {
+.tools-experiences-container {
     display: flex;
-    gap: 15px;
-    margin-left: 10px; /* Espace entre le bouton CV et les icônes */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    background-color: #fafafa;
 }
 
-
-.social-icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+.tools-box,
+.experiences-box {
+    flex: 1;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-    .social-icon:hover {
-        transform: scale(1.1);
+    .tools-box h3,
+    .experiences-box h3 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: bold;
     }
 
+    .tools-box ul,
+    .experiences-box ul {
+        list-style: none;
+    }
+
+        .tools-box ul li,
+        .experiences-box ul li {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 15px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            /* Hover effect for tool items – NO pointer */
+            .tools-box ul li:hover {
+                transform: scale(1.05);
+                background-color: #f0f0f0;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                font-family: CaviarBold;
+                cursor: default; /* Pas de main ici */
+            }
+
+            /* Hover effect for experiences – KEEP pointer */
+            .experiences-box ul li a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: inherit;
+                padding: 8px;
+                border-radius: 5px;
+                width: 100%;
+                font-family: Caviar;
+                transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+                .experiences-box ul li a:hover {
+                    transform: scale(1.05);
+                    background-color: #f0f0f0;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    cursor : pointer; /* Main ici */
+                }
+
+.tool-logo,
+.company-logo {
+    width: 50px;
+    margin-right: 15px;
+}
+
+.experiences-box ul li a.coursier-logo .company-logo {
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.experiences-box ul li a:hover .company-logo {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+.experiences-box ul li h3 {
+    margin: 0;
+}
+
+.experiences-box ul li p {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .tools-box,
+    .experiences-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .tools-experiences-container {
+        flex-direction: column;
+        gap: 20px;
+        background: #fafafa;
+    }
+}
+
+/* CAROUSEL */
 .carousel-section {
     background-color: #fafafa;
     padding: 40px 20px;
@@ -246,6 +358,7 @@ header {
     overflow: hidden;
     max-width: 1000px;
     margin: 0 auto;
+    height: 500px; /* Hauteur fixe pour le carrousel */
 }
 
 .carousel-slide {
@@ -253,10 +366,11 @@ header {
     flex-wrap: wrap;
     background-color: #fff;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     gap: 20px;
+    height: 60%; /* Hauteur fixe pour chaque slide */
+    overflow: hidden; /* Pour ne pas que la vidéo déborde */
 }
 
     .carousel-slide.active {
@@ -266,11 +380,14 @@ header {
 .carousel-video {
     flex: 1;
     min-width: 300px;
+    height: 100%; /* La vidéo prend toute la hauteur du carrousel */
+    overflow: hidden;
 }
 
     .carousel-video video {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover; /* Pour que la vidéo couvre toute la zone sans déformation */
         border-radius: 10px;
     }
 
@@ -284,8 +401,8 @@ header {
 
     .carousel-info h3 {
         font-size: 1.5rem;
-        margin-bottom: 10px;
         color: #222;
+        margin-bottom: 10px;
     }
 
     .carousel-info p {
@@ -294,14 +411,20 @@ header {
         margin-bottom: 20px;
     }
 
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Pour qu'ils passent à la ligne si l'écran est petit */
+}
+
 .project-btn {
-    align-self: flex-start;
     padding: 10px 16px;
     background-color: #333;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: transform 0.2s ease;
+    white-space: nowrap;
 }
 
     .project-btn:hover {
@@ -311,18 +434,14 @@ header {
 
 .carousel-arrow {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background: none;
     border: none;
-    padding: 0;
     cursor: pointer;
-    z-index: 100;
+    z-index: 110; /* Augmenter le z-index pour garantir que les flèches sont au-dessus du carrousel */
 }
 
     .carousel-arrow img {
-        width: 40px; /* Ajuste la taille ici */
-        height: auto;
+        width: 40px;
         transition: transform 0.2s ease;
     }
 
@@ -331,15 +450,12 @@ header {
     }
 
     .carousel-arrow.left {
-        left: 10px;
+
     }
 
     .carousel-arrow.right {
-        right: 10px;
     }
 
-
-/* Responsive */
 @media screen and (max-width: 768px) {
     .carousel-slide {
         flex-direction: column;
@@ -350,13 +466,25 @@ header {
         align-items: center;
     }
 
+    .button-group {
+        justify-content: center;
+    }
+
     .project-btn {
-        align-self: center;
+        align-self: auto;
+    }
+
+    /* Ajuste la position des flèches pour les écrans plus petits */
+    .carousel-arrow.left {
+        left: 10px;
+    }
+
+    .carousel-arrow.right {
+        right: 10px;
     }
 }
 
-
-/*FOOTER */
+/* FOOTER */
 .site-footer {
     background-color: #f5f5f5;
     padding: 30px 20px;
@@ -412,7 +540,6 @@ header {
             text-decoration: underline;
         }
 
-/* Responsive footer */
 @media screen and (max-width: 768px) {
     .footer-links {
         flex-direction: column;
