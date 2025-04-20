@@ -3,72 +3,111 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mon Portfolio</title>
+    <title>Portfolio | BOUCHÉ Elouan</title>
     <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
     <header>
         <nav class="navbar">
-            <img src="baleine.png" alt="logodevalo" class="logodevalo">
+            <img src="baleine.png" alt="logoSiteElouan" class="logoSiteElouan">
             <div class="nav-links">
                 <ul>
                     <li><a href="#about">A Propos</a></li>
-                    <li><a href="#mesprojets">Mes Projets</a></li>
+                    <li><a href="#projects">Mes Projets</a></li>
                     <li><a href="#contact">Me Contacter</a></li>
                 </ul>
             </div>
-            <img src="menu.png" alt="Menu" class="menu-hamburger">
+            <img src="menu.png" alt="Menu" class="menu-hamburger" id="menu-icon">
         </nav>
     </header>
 
-    <section id="about">
-        <h2>Étudiant en développement informatique</h2>
-        <p>
-            Motivé, Sérieux et Flexible, je recherche un stage ou un CDD de 2 mois durant la période de mai à aout afin de mettre en pratique mes compétences.
-        </p>
-    </section>
+    <!-- Section A Propos -->
+    <section id="about" class="about-section">
+        <div class="about-left">
+            <div class="centered-text">
+                <h2>Bonjour je suis</h2>
+                <h1>ELOUAN BOUCHE</h1>
+            </div>
+        </div>
 
-    <section id="mesprojets">
-        <h2>Mes projets</h2>
-        <div class="carousel-container">
-            <button class="arrow left" onclick="moveCarousel(-1)">
-                <img src="fleche-gauche.png" alt="Flèche gauche">
-            </button>
-            <div class="carousel" id="carousel">
-                <div class="carousel-item active">
-                    <div class="carousel-content">
-                        <div class="carousel-video">
-                            <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop></video>
-                        </div>
-                        <div class="carousel-text">
-                            <h2>Titre de la vidéo 1</h2>
-                            <p>Voici une description de la première vidéo.</p>
-                            <button>En savoir plus</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-content">
-                        <div class="carousel-video">
-                            <video src="https://www.w3schools.com/html/movie.mp4" autoplay muted loop></video>
-                        </div>
-                        <div class="carousel-text">
-                            <h2>Titre de la vidéo 2</h2>
-                            <p>Description du deuxième projet avec vidéo intégrée.</p>
-                            <button>Voir le projet</button>
-                        </div>
-                    </div>
+        <div class="about-right">
+            <div class="about-text">
+                <p>
+                    Je suis actuellement étudiant au <b>Gaming Campus</b>, une école spécialisée dans les métiers du <b>jeu vidéo</b> et du développement.
+                    C’est dans ce cadre que j’ai renforcé mes compétences en <b>C++</b>, notamment à travers des projets utilisant la bibliothèque <b>SFML</b>, qui m'ont permis de concevoir des jeux en 2D, gérer des interfaces interactives et comprendre les mécaniques de moteur de jeu.
+                    Ces expériences ont affiné ma rigueur, ma logique algorithmique et ma capacité à transformer une idée en un projet concret.
+                </p>
+            </div>
+            <div class="cv-btn-wrapper">
+                <a href="cv.pdf" class="download-btn" download>Télécharger mon CV</a>
+
+                <div class="icon-links">
+                    <a href="https://www.linkedin.com/in/tonprofil" target="_blank">
+                        <img src="linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="https://github.com/tonpseudo" target="_blank">
+                        <img src="github.png" alt="GitHub" class="social-icon">
+                    </a>
                 </div>
             </div>
-            <button class="arrow right" onclick="moveCarousel(1)">
-                <img src="fleche-droite.png" alt="Flèche droite">
-            </button>
+
         </div>
     </section>
 
-    <footer id="contact">
-        <p>📧 Vous pouvez me contacter à : <a href="mailto:tonadresse@mail.com">tonadresse@mail.com</a></p>
+    <section id="projects" class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <div class="carousel-video">
+                    <video src="VideoJeu1LostInPalm.mp4" autoplay muted loop></video>
+                </div>
+                <div class="carousel-info">
+                    <h3>Projet 1 : Nom du jeu</h3>
+                    <p>Un petit résumé de ce projet, ce que tu as fait, ce que tu as appris, etc.</p>
+                    <a href="https://github.com/tonpseudo/projet1" class="project-btn" target="_blank">Voir sur GitHub</a>
+                </div>
+            </div>
+
+            <div class="carousel-slide">
+                <div class="carousel-video">
+                    <video src="projet2.mp4" autoplay muted loop></video>
+                </div>
+                <div class="carousel-info">
+                    <h3>Projet 2 : Autre jeu cool</h3>
+                    <p>Une autre description pour ce projet.</p>
+                    <a href="https://github.com/tonpseudo/projet2" class="project-btn" target="_blank">Voir sur GitHub</a>
+                </div>
+            </div>
+
+            <!-- Ajoute plus de .carousel-slide si besoin -->
+            <!-- Flèche gauche -->
+            <button class="carousel-arrow left">
+                <img src="arrow-left.png" alt="Précédent">
+            </button>
+
+            <!-- Flèche droite -->
+            <button class="carousel-arrow right">
+                <img src="arrow-right.png" alt="Suivant">
+            </button>
+
+        </div>
+    </section>
+
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="#about">A Propos</a></li>
+                <li><a href="#projects">Mes Projets</a></li>
+                <li><a href="#contact">Me Contacter</a></li>
+            </ul>
+
+            <div class="footer-contact">
+                <p>Email : <a href="mailto:elouan.bouche@gmail.com">elouan.bouche@gmail.com</a></p>
+                <a href="https://www.linkedin.com/in/tonprofil" target="_blank">
+                    <img src="logo-linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

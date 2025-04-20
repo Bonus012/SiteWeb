@@ -1,34 +1,39 @@
-const carousel = document.getElementById("carousel");
-const items = document.querySelectorAll(".carousel-item");
-const menuHamburger = document.querySelector(".menu-hamburger");
-const navLinks = document.querySelector(".nav-links");
+// --- MENU BURGER ---
+const menuIcon = document.getElementById('menu-icon');
+const navLinks = document.querySelector('.nav-links');
 
-menuHamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("mobile-menu");
+menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
 });
 
+// --- CARROUSEL ---
+const slides = document.querySelectorAll('.carousel-slide');
+let currentSlide = 0;
 
-let index = 0;
-
-function updateCarousel() {
-    items.forEach((item, i) => {
-        item.classList.remove("active");
-        const video = item.querySelector("video");
-        if (i === index) {
-            item.classList.add("active");
-            video.play();
-        } else {
-            video.pause();
-        }
+// Fonctions de navigation
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
     });
-    carousel.style.transform = `translateX(-${index * 100}%)`;
 }
 
-function moveCarousel(direction) {
-    index += direction;
-    if (index < 0) index = items.length - 1;
-    if (index >= items.length) index = 0;
-    updateCarousel();
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
 }
 
-updateCarousel();
+function previousSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Écouteurs sur les boutons fléchés (avec images)
+document.querySelector('.carousel-arrow.left').addEventListener('click', previousSlide);
+document.querySelector('.carousel-arrow.right').addEventListener('click', nextSlide);
+
+// BONUS : si tu as aussi des boutons avec id #next et #prev
+const nextBtn = document.getElementById('next');
+const prevBtn = document.getElementById('prev');
+
+if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+if (prevBtn) prevBtn.addEventListener('click', previousSlide);
