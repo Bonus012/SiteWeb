@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="baleine.png" alt="logodevalo" class="logodevalo">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#about">A Propos</a></li>
+                    <li><a href="#mesprojets">Mes Projets</a></li>
+                    <li><a href="#contact">Me Contacter</a></li>
+                </ul>
+            </div>
+            <img src="menu.png" alt="Menu" class="menu-hamburger">
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>Étudiant en développement informatique</h2>
+        <p>
+            Motivé, Sérieux et Flexible, je recherche un stage ou un CDD de 2 mois durant la période de mai à aout afin de mettre en pratique mes compétences.
+        </p>
+    </section>
+
+    <section id="mesprojets">
+        <h2>Mes projets</h2>
+        <div class="carousel-container">
+            <button class="arrow left" onclick="moveCarousel(-1)">
+                <img src="fleche-gauche.png" alt="Flèche gauche">
+            </button>
+            <div class="carousel" id="carousel">
+                <div class="carousel-item active">
+                    <div class="carousel-content">
+                        <div class="carousel-video">
+                            <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-text">
+                            <h2>Titre de la vidéo 1</h2>
+                            <p>Voici une description de la première vidéo.</p>
+                            <button>En savoir plus</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <div class="carousel-video">
+                            <video src="https://www.w3schools.com/html/movie.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-text">
+                            <h2>Titre de la vidéo 2</h2>
+                            <p>Description du deuxième projet avec vidéo intégrée.</p>
+                            <button>Voir le projet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="arrow right" onclick="moveCarousel(1)">
+                <img src="fleche-droite.png" alt="Flèche droite">
+            </button>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>📧 Vous pouvez me contacter à : <a href="mailto:tonadresse@mail.com">tonadresse@mail.com</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

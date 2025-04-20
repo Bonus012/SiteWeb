@@ -1,0 +1,241 @@
+﻿@font-face {
+    font-family: 'Bestime';
+    src: url('Bestime.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #608BC1;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Bestime';
+    background-color: #133E87;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .navbar .logodevalo {
+        height: 60px;
+    }
+
+    .navbar a {
+        color: #F3F3E0;
+        font-size: 24px;
+        text-decoration: none;
+    }
+
+        .navbar a:hover {
+            color: #F3F3E0;
+            font-size: 25px;
+        }
+
+.nav-links ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-hamburger {
+    display: none;
+    height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(48, 56, 63, 0.25);
+        backdrop-filter: blur(7px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+        z-index: 2;
+    }
+
+        .nav-links.mobile-menu {
+            margin-left: 0;
+        }
+
+        .nav-links ul {
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+}
+
+section {
+    max-width: 1000px;
+    margin: 120px auto 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+    section h2 {
+        color: #133E87;
+        margin-bottom: 20px;
+    }
+
+#about {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+    #about p {
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+.carousel-container {
+    margin-top: 40px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    display: flex;
+    gap: 20px;
+    opacity: 0.4;
+    transform: scale(0.85);
+    transition: transform 0.5s, opacity 0.5s;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+    .carousel-item.active {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 2;
+    }
+
+.carousel-content {
+    display: flex;
+    background: #CBDCEB;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+}
+
+.carousel-video {
+    flex: 1;
+    min-width: 60%;
+}
+
+    .carousel-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.carousel-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    color: #133E87;
+    text-align: left;
+}
+
+    .carousel-text p {
+        color: #333;
+    }
+
+    .carousel-text button {
+        background-color: #608BC1;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+        .carousel-text button:hover {
+            background-color: #133E87;
+        }
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+}
+
+    .arrow img {
+        width: 30px;
+        height: auto;
+    }
+
+    .arrow.left {
+        left: 10px;
+    }
+
+    .arrow.right {
+        right: 10px;
+    }
+
+#contact {
+    background-color: #133E87;
+    color: #F3F3E0;
+    text-align: center;
+    padding: 80px 20px 30px 20px;
+    z-index: 1;
+}
+
+    #contact a {
+        color: #F3F3E0;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+@media screen and (max-width: 768px) {
+    .carousel-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel-content {
+        flex-direction: column;
+    }
+
+    .carousel-text {
+        text-align: center;
+        align-items: center;
+    }
+}
