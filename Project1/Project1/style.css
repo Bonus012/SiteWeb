@@ -81,34 +81,39 @@ header {
                 border-bottom: 2px solid #333;
                 font-weight: bold;
             }
-
 @media screen and (max-width: 768px) {
     .menu-hamburger {
         display: block;
+        z-index: 1001;
     }
 
-    .nav-links ul {
+    .nav-links {
         display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         flex-direction: column;
-        gap: 20px;
+        justify-content: center;
+        align-items: center;
         background-color: #f5f5f5;
-        padding: 20px;
-        border-radius: 5px;
-        z-index: 1000;
+        width: 100%;
+        position: static;
+        margin-top: 60px;
+        padding: 10px 0;
     }
 
-        .nav-links ul li a {
-            font-size: 20px;
+        .nav-links.active {
+            display: flex;
         }
 
-    .nav-links.active ul {
-        display: flex;
-    }
+        .nav-links ul {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+            .nav-links ul li a {
+                font-size: 20px;
+            }
 }
+
+
 /* ABOUT */
 #about {
     display: flex;
@@ -353,14 +358,27 @@ header {
     padding: 40px 20px;
 }
 
-.carousel-container {
+/* Ajoute ceci si ce n’est pas déjà fait */
+.carousel-wrapper {
+    background-color: #fafafa; /* <-- important */
     position: relative;
-    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
     max-width: 1000px;
+    height : 60%;
     margin: 0 auto;
-    height: 500px; /* Hauteur fixe pour le carrousel */
+    margin-top : 30px;
 }
 
+
+/* Container du carrousel */
+.carousel-container {
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Slide du carrousel */
 .carousel-slide {
     display: none;
     flex-wrap: wrap;
@@ -369,28 +387,27 @@ header {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     gap: 20px;
-    height: 60%; /* Hauteur fixe pour chaque slide */
-    overflow: hidden; /* Pour ne pas que la vidéo déborde */
+    height: 100%; /* Assure une hauteur cohérente */
 }
 
     .carousel-slide.active {
         display: flex;
     }
 
+/* Vidéo */
 .carousel-video {
     flex: 1;
     min-width: 300px;
-    height: 100%; /* La vidéo prend toute la hauteur du carrousel */
-    overflow: hidden;
 }
 
     .carousel-video video {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Pour que la vidéo couvre toute la zone sans déformation */
         border-radius: 10px;
+        object-fit: cover;
     }
 
+/* Infos */
 .carousel-info {
     flex: 1;
     display: flex;
@@ -414,9 +431,10 @@ header {
 .button-group {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap; /* Pour qu'ils passent à la ligne si l'écran est petit */
+    flex-wrap: wrap;
 }
 
+/* Boutons */
 .project-btn {
     padding: 10px 16px;
     background-color: #333;
@@ -432,16 +450,21 @@ header {
         background-color: #555;
     }
 
+/* Flèches */
 .carousel-arrow {
-    position: absolute;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 110; /* Augmenter le z-index pour garantir que les flèches sont au-dessus du carrousel */
+    z-index: 10;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
 }
 
     .carousel-arrow img {
         width: 40px;
+        height: auto;
         transition: transform 0.2s ease;
     }
 
@@ -449,21 +472,28 @@ header {
         transform: scale(1.1);
     }
 
+    /* Déplacer visuellement les flèches à l'extérieur */
     .carousel-arrow.left {
-
+        margin-right: 10px;
     }
 
     .carousel-arrow.right {
+        margin-left: 10px;
     }
 
+/* Responsive */
 @media screen and (max-width: 768px) {
+    .carousel-wrapper {
+        flex-direction: column;
+    }
+
     .carousel-slide {
         flex-direction: column;
     }
 
     .carousel-info {
-        text-align: center;
         align-items: center;
+        text-align: center;
     }
 
     .button-group {
@@ -471,18 +501,25 @@ header {
     }
 
     .project-btn {
-        align-self: auto;
+        align-self: center;
     }
 
-    /* Ajuste la position des flèches pour les écrans plus petits */
+    .carousel-arrow.left,
+    .carousel-arrow.right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
     .carousel-arrow.left {
-        left: 10px;
+        left: -20px;
     }
 
     .carousel-arrow.right {
-        right: 10px;
+        right: -20px;
     }
 }
+
 
 /* FOOTER */
 .site-footer {

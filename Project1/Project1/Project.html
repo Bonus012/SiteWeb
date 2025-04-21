@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mes Projets | BOUCHÉ Elouan</title>
+    <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="baleine.png" alt="logoSiteElouan" class="logoSiteElouan">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="Elouan.html">Menu Principal</a></li>
+                    <li><a href="#contact">Me Contacter</a></li>
+                </ul>
+            </div>
+            <img src="menu.png" alt="Menu" class="menu-hamburger" id="menu-icon">
+        </nav>
+    </header>
+
+    <!-- SECTION DÉTAIL DU PROJET -->
+    <section id="project-detail" class="hidden">
+        <div class="detail-left">
+            <img id="detail-media" src="" alt="Media projet">
+        </div>
+        <div class="detail-right">
+            <h2 id="detail-title">Nom du projet</h2>
+            <p id="detail-description">Description du projet...</p>
+            <div class="tags" id="detail-tags"></div>
+        </div>
+    </section>
+
+    <!-- GRILLE DE PROJETS -->
+    <section class="project-grid">
+        <!-- 9 projets avec images aléatoires et tags -->
+        <div class="project-card" onclick="showDetail('Lost in Palms', 'https://picsum.photos/seed/palm/600/400', 'Un projet de génération de flore et de système de métier.', ['C++', 'DirectX', 'Multijoueur'])">
+            <img src="https://picsum.photos/seed/palm/300/200" alt="Lost in Palms">
+            <h3>Lost in Palms</h3>
+            <div class="tags">
+                <span class="tag tag-cpp">C++</span>
+                <span class="tag tag-multijoueur">Multijoueur</span>
+            </div>
+
+        </div>
+
+        <div class="project-card" onclick="showDetail('Simulation Traffic', 'https://picsum.photos/seed/traffic/600/400', 'Simulation de circulation avec IA en C++.', ['C++', 'AI', 'Simulation'])">
+            <img src="https://picsum.photos/seed/traffic/300/200" alt="Simulation Traffic">
+            <h3>Simulation Traffic</h3>
+            <div class="tags">
+                <span class="tag tag-ai">IA</span>
+                <span class="tag tag-multijoueur">Multijoueur</span>
+            </div>
+
+        </div>
+
+        <div class="project-card" onclick="showDetail('GameJam Unity', 'https://picsum.photos/seed/unity/600/400', 'Un jeu fait en 48h avec Unity.', ['Unity', '2D', 'GameJam'])">
+            <img src="https://picsum.photos/seed/unity/300/200" alt="GameJam Unity">
+            <h3>GameJam Unity</h3>
+            <div class="tags">
+                <span class="tag tag-ai">IA</span>
+                <span class="tag tag-multijoueur">Multijoueur</span>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="showDetail('Site eCommerce', 'https://picsum.photos/seed/shop/600/400', 'Développement d’un site de vente en ligne.', ['HTML', 'CSS', 'JS'])">
+            <img src="https://picsum.photos/seed/shop/300/200" alt="Site eCommerce">
+            <h3>Site eCommerce</h3>
+            <div class="tags">
+                <span class="tag tag-ai">IA</span>
+                <span class="tag tag-multijoueur">Multijoueur</span>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="showDetail('Portfolio 2025', 'https://picsum.photos/seed/portfolio/600/400', 'Mon portfolio en ligne responsive.', ['CSS', 'Design', 'Frontend'])">
+            <img src="https://picsum.photos/seed/portfolio/300/200" alt="Portfolio">
+            <h3>Portfolio 2025</h3>
+            <div class="tags">
+                <span class="tag tag-ai">IA</span>
+                <span class="tag tag-multijoueur">Multijoueur</span>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="showDetail('Snake Game SFML', 'https://picsum.photos/seed/snake/600/400', 'Un jeu snake en C++ avec SFML.', ['SFML', 'C++', '2D'])">
+            <img src="https://picsum.photos/seed/snake/300/200" alt="Snake SFML">
+            <h3>Snake Game SFML</h3>
+            <div class="tags">
+                <span class="tag tag-ai">IA</span>
+                <span class="tag tag-multijoueur">Multijoueur</span>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="showDetail('Jeu Quiz JS', 'https://picsum.photos/seed/quiz/600/400', 'Un jeu de quiz en JavaScript.', ['JavaScript', 'Frontend'])">
+            <img src="https://picsum.photos/seed/quiz/300/200" alt="Quiz JS">
+            <h3>Jeu Quiz JS</h3>
+            <div class="tags">
+                <span class="tag tag-ai">IA</span>
+                <span class="tag tag-multijoueur">Multijoueur</span>
+            </div>
+        </div>
+
+
+        <div class="project-card" onclick="showDetail('Analyse Données Python', 'https://picsum.photos/seed/data/600/400', 'Projet d’analyse de données avec pandas.', ['Python', 'Data', 'Pandas'])">
+            <img src="https://picsum.photos/seed/data/300/200" alt="Data Python">
+            <h3>Analyse Données</h3>
+            <div class="tags">
+                <span class="tag tag-ai">IA</span>
+                <span class="tag tag-multijoueur">Multijoueur</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="site-footer">
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="#about">A Propos</a></li>
+                <li><a href="#projects">Mes Projets</a></li>
+                <li><a href="#contact">Me Contacter</a></li>
+            </ul>
+
+            <div class="footer-contact">
+                <p>Actuellement en recherche de Stage</p>
+                <p>Email : <a href="mailto:elouan.bouche@gmail.com">elouan.bouche@gmail.com</a></p>
+                <a href="https://www.linkedin.com/in/elouan-bouche-8b3083309/" target="_blank">
+                    <img src="logo-linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="project.js"></script>
+</body>
+</html>

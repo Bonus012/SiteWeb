@@ -1,0 +1,456 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONTS */
+@font-face {
+    font-family: 'Bestime';
+    src: url('Bestime.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Caviar';
+    src: url('CaviarDreams.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'CaviarBold';
+    src: url('CaviarDreams_bold.ttf') format('truetype');
+}
+
+/* HEADER */
+header {
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    position: relative;
+    height: 60px;
+    margin-bottom:15px;
+}
+
+.logoSiteElouan {
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-hamburger {
+    height: 30px;
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+    .nav-links ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+    }
+
+        .nav-links ul li a {
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-family: 'Caviar', sans-serif;
+            transition: all 0.2s ease-in-out;
+            padding: 8px 16px;
+            border-bottom: 2px solid transparent;
+        }
+
+            .nav-links ul li a:hover {
+                border-bottom: 2px solid #333;
+                font-weight: bold;
+            }
+
+@media screen and (max-width: 768px) {
+    .menu-hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f5f5;
+        width: 100%;
+        position: static;
+        margin-top: 60px;
+        padding: 10px 0;
+    }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links ul {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+            .nav-links ul li a {
+                font-size: 20px;
+            }
+}
+
+body {
+    font-family: 'Caviar', sans-serif;
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* SECTION DÉTAIL DU PROJET */
+#project-detail {
+    display: flex;
+    gap: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+    #project-detail.hidden {
+        display: none;
+    }
+
+.detail-left,
+.detail-right {
+    flex: 1;
+}
+
+    .detail-left img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        max-height: 400px;
+    }
+
+    .detail-right h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .detail-right p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+#detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+    #detail-tags span {
+        background-color: #e0e0e0;
+        color: #333;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+/* GRILLE DES PROJETS */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Réduire l'espace entre les cartes */
+    justify-items: center; /* Centrer les cartes dans la grille */
+    max-width: 70%; /* Limiter la largeur totale de la grille à 70% de l'écran */
+    margin: 0 auto; /* Centrer la grille horizontalement */
+}
+/* CARTES DE PROJETS */
+.project-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc avec une opacité de 90% */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    max-width: 350px; /* Largeur maximale de la carte */
+    width: 100%; /* La carte prend toute la largeur de son conteneur */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espacement égal entre le titre, l'image et les tags */
+    padding: 20px;
+    backdrop-filter: blur(5px); /* Effet flou derrière la carte (optionnel pour plus d'esthétique) */
+}
+
+    .project-card h3 {
+        font-size: 1.2rem;
+        margin: 15px;
+        text-align: center; /* Centre le titre dans la carte */
+    }
+
+    .project-card .tags {
+        display: flex;
+        justify-content: center; /* Centre les tags horizontalement */
+        gap: 8px;
+        flex-wrap: wrap;
+        padding: 0 15px 15px 15px;
+    }
+
+        .project-card .tags span {
+            color: #444;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-align: center; /* Centre le texte dans les tags */
+        }
+
+
+    /* Image dans les cartes */
+    .project-card img {
+        width: 100%;
+        height: 200px; /* Hauteur plus grande pour des cartes rectangulaires */
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    /* Titre dans les cartes */
+    .project-card h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: center; /* Centrer le titre */
+    }
+
+    /* Tags dans les cartes */
+    .project-card .tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center; /* Centrer les tags */
+    }
+
+        /* Styles des tags */
+        .project-card .tags span {
+            color: white;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .tags span {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+}
+
+/* Couleurs spécifiques par tag */
+.tag-cpp { background-color: #00599C; }         /* C++: bleu foncé */
+.tag-js, .tag-javascript { background-color: #f7df1e; color: #000; } /* JS: jaune */
+.tag-html { background-color: #e34c26; }
+.tag-css { background-color: #264de4; }
+.tag-frontend { background-color: #00bcd4; }
+.tag-backend { background-color: #4caf50; }
+.tag-unity { background-color: #222c37; }
+.tag-2d { background-color: #9c27b0; }
+.tag-3d { background-color: #ff5722; }
+.tag-ai { background-color: #8bc34a; }
+.tag-simulation { background-color: #03a9f4; }
+.tag-sfml { background-color: #c2185b; }
+.tag-python { background-color: #3776ab; }
+.tag-data { background-color: #607d8b; }
+.tag-pandas { background-color: #ffb300; color: #000; }
+.tag-multijoueur { background-color: #673ab7; }
+.tag-design { background-color: #e91e63; }
+.tag-gamejam { background-color: #ff9800; }
+
+
+/* CENTRAGE DU DETAIL DU PROJET */
+#project-detail {
+    display: flex;
+    gap: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    max-width: 70%; /* Limiter la largeur du détail du projet à 70% */
+    margin: 0 auto; /* Centrer le détail du projet */
+    margin-bottom: 15px;
+}
+
+    #project-detail.hidden {
+        display: none;
+    }
+
+.detail-left,
+.detail-right {
+    flex: 1;
+}
+
+    .detail-left img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        max-height: 400px;
+    }
+
+    .detail-right h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        text-align: center; /* Centrer le titre dans le détail du projet */
+    }
+
+    .detail-right p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        text-align: justify; /* Justifier le texte de la description */
+    }
+
+#detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Centrer les tags dans le détail */
+}
+
+    #detail-tags span {
+        color: #333;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+/* RESPONSIVE */
+@media screen and (max-width: 1024px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #project-detail {
+        flex-direction: column;
+    }
+
+    .detail-left img {
+        max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-right h2 {
+        font-size: 1.6rem;
+    }
+
+    .detail-right p {
+        font-size: 1rem;
+    }
+
+    .project-card img {
+        height: 160px;
+    }
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+    .social-icon:hover {
+        transform: scale(1.1);
+    }
+/* FOOTER */
+.site-footer {
+    background-color: #f5f5f5;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+    .footer-links li a {
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+
+        .footer-links li a:hover {
+            color: #000;
+            font-weight: bold;
+        }
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+    .footer-contact p {
+        margin: 0;
+        color: #555;
+        font-size: 0.95rem;
+    }
+
+    .footer-contact a {
+        color: #333;
+        text-decoration: none;
+    }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+
+@media screen and (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
