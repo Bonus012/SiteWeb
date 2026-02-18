@@ -2,192 +2,577 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio | BOUCHÉ Elouan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Elouan Bouché</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ══════════════════════════════════════════
+           TIMELINE HORIZONTALE
+        ══════════════════════════════════════════ */
+        .journey-wrapper {
+            max-width: 1120px;
+            margin: 4rem auto;
+            padding: 3rem clamp(1.5rem, 4vw, 4rem);
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(12px);
+        }
+
+        .journey-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Conteneur scrollable sur mobile */
+        .timeline-scroll {
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) transparent;
+        }
+
+        /* La timeline en ligne */
+        .timeline {
+            display: flex;
+            gap: 0;
+            position: relative;
+            padding: 0;
+            min-width: max-content;
+            align-items: flex-start;
+        }
+
+            /* Ligne horizontale du milieu */
+            .timeline::before {
+                content: "";
+                position: absolute;
+                top: 28px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+                z-index: 0;
+            }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            flex: 1;
+            min-width: 240px;
+            max-width: 320px;
+            padding: 0 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+            .timeline-item.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        /* Point sur la ligne */
+        .timeline-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg);
+            box-shadow: 0 0 0 2px var(--accent), 0 0 20px rgba(91,140,255,.6);
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+            animation: pulse-dot 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%,100% {
+                box-shadow: 0 0 0 2px var(--accent), 0 0 20px rgba(91,140,255,.5);
+            }
+
+            50% {
+                box-shadow: 0 0 0 2px var(--accent), 0 0 35px rgba(91,140,255,.9);
+            }
+        }
+
+        /* Ligne verticale entre le dot et la carte */
+        .timeline-connector {
+            width: 2px;
+            height: 28px;
+            background: linear-gradient(180deg, var(--accent), var(--accent-purple));
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 1.2rem 1.3rem;
+            width: 100%;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+            .timeline-content:hover {
+                border-color: rgba(91, 140, 255, 0.55);
+                transform: translateY(-4px);
+                box-shadow: 0 12px 30px rgba(91, 140, 255, 0.18);
+            }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+            color: white;
+            border-radius: var(--radius-full);
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.04em;
+        }
+
+        .timeline-title {
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .timeline-subtitle {
+            color: var(--accent);
+            font-size: 0.88rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .timeline-description {
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 0.88rem;
+        }
+
+        /* ══════════════════════════════════════════
+           CARROUSEL AMÉLIORÉ
+        ══════════════════════════════════════════ */
+        .projects-wrapper {
+            max-width: 1120px;
+            margin: 4rem auto;
+            padding: 3rem clamp(1.5rem, 4vw, 4rem);
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(12px);
+        }
+
+        .projects-title {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+        }
+
+        /* Track qui contient toutes les slides */
+        .carousel-track {
+            position: relative;
+            min-height: 340px;
+        }
+
+        .carousel-item {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(60px);
+            transition: opacity 0.45s ease, transform 0.45s cubic-bezier(.22,1,.36,1);
+        }
+
+            .carousel-item.active {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateX(0);
+                position: relative;
+            }
+
+            .carousel-item.exit-left {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+
+        /* Vidéo / média */
+        .carousel-left {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: rgba(15,23,42,.6);
+            border: 1px solid rgba(148,163,184,.2);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .carousel-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .carousel-left:hover .carousel-video {
+            transform: scale(1.03);
+        }
+
+        /* Texte */
+        .carousel-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            height: 100%;
+            justify-content: center;
+        }
+
+            .carousel-right h3 {
+                font-size: clamp(1.4rem, 2.5vw, 2rem);
+                font-weight: 800;
+                margin: 0;
+                background: linear-gradient(135deg, #fff, var(--accent));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .carousel-right p {
+                color: var(--muted);
+                line-height: 1.75;
+                font-size: 0.97rem;
+                margin: 0;
+            }
+
+        .carousel-actions {
+            display: flex;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        /* Navigation */
+        .carousel-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+        }
+
+            .carousel-nav button {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: rgba(15,23,42,.7);
+                border: 1px solid rgba(148,163,184,.35);
+                color: var(--text);
+                font-size: 1.1rem;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.25s ease;
+            }
+
+                .carousel-nav button:hover {
+                    background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+                    border-color: transparent;
+                    transform: scale(1.1);
+                    box-shadow: 0 8px 24px rgba(91,140,255,.35);
+                }
+
+        /* Indicateurs dots */
+        .carousel-dots {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(148,163,184,.35);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+            .carousel-dot.active {
+                width: 24px;
+                border-radius: 4px;
+                background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+            }
+
+        /* ══ RESPONSIVE ══ */
+        @media (max-width: 768px) {
+            .carousel-item {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .carousel-track {
+                min-height: auto;
+            }
+
+            .carousel-item {
+                position: relative;
+                inset: auto;
+            }
+
+                .carousel-item:not(.active) {
+                    display: none;
+                }
+
+                .carousel-item.active {
+                    position: relative;
+                }
+
+            .carousel-actions {
+                flex-direction: column;
+            }
+
+                .carousel-actions .btn {
+                    justify-content: center;
+                    text-align: center;
+                }
+
+            .timeline-item {
+                min-width: 200px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar">
-            <img src="baleine.png" alt="logoSiteElouan" class="logoSiteElouan">
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#about">A Propos</a></li>
-                    <li><a href="Project.html">Mes Projets</a></li>
-                    <li><a href="#contact">Me Contacter</a></li>
-                </ul>
-            </div>
-            <img src="menu.png" alt="Menu" class="menu-hamburger" id="menu-icon">
+    <canvas id="particles"></canvas>
+
+    <header class="main-header">
+        <nav class="nav">
+            <button class="nav__toggle" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav__links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#journey">Parcours</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Section A Propos -->
-    <section id="about" class="about-section">
-        <div class="about-left">
-            <div class="centered-text">
-                <h2>Bonjour je suis</h2>
-                <h1>ELOUAN BOUCHE</h1>
-            </div>
-        </div>
-
-        <div class="about-right">
-            <div class="about-text">
-                <p>
-                    Étudiant en <b>deuxième année au Gaming Campus de Lyon</b>, je me forme grâce à une <b>pédagogie par projet</b>, axée sur la pratique et la collaboration. Durant ma <b>première année</b>, j’ai participé à des projets variés : <b>six semaines dédiées au développement web</b>, une initiation à <b>Unity</b>, <b>Blender</b>, à la <b>gestion de projet</b>, ainsi qu’aux bases de <b>Python</b> et <b>C</b>.
+    <!-- HERO -->
+    <section class="hero-wrapper">
+        <div class="hero">
+            <div class="hero__content">
+                <h1 class="hero__name">Elouan Bouché</h1>
+                <div class="hero__tags">
+                    <span class="hero__tag tag-cpp">C++</span>
+                    <span class="hero__tag tag-cs">C#</span>
+                    <span class="hero__tag tag-python">Python</span>
+                </div>
+                <p class="hero__text">
+                    Spécialisé en C#, Unity et systèmes procéduraux, je crée des jeux et des projets toujours plus ambitieux.
                 </p>
-                <p>
-                    Ma <b>seconde année</b> est entièrement spécialisée en <b>C++</b>, avec des projets concrets tels que la <b>programmation réseau</b> avec des sockets <b>UDP</b> pour un jeu multijoueur, le développement d’un <b>moteur 3D</b> avec <b>DirectX12</b>, la création de jeux en 2D avec <b>SFML</b>, et une collaboration avec le <b>musée Henri Malartre</b> pour un projet sur mesure.
-                </p>
-                <p>
-                    Cette formation renforce mes <b>compétences techniques</b>, développe mon <b>autonomie</b> et ma capacité à <b>travailler en équipe</b> avec des <b>artistes</b> et <b>commerciaux</b>. En parallèle, mon expérience en <b>grande distribution</b> m’a apporté <b>rigueur</b> et <b>organisation</b>.
-                </p>
-                <p>
-                    Je suis actuellement à la recherche d’un <b>stage</b> pour <b>valider ma deuxième année de Bachelor</b>, enrichir mon portfolio, et acquérir une première expérience en entreprise. <b>Passionné d’informatique</b>, je suis motivé à m’investir pleinement pour <b>concrétiser mon projet professionnel</b>.
-                </p>
-
-
-            </div>
-            <div class="cv-btn-wrapper">
-                <a href="CV_Elouan_BOUCHE.pdf" class="download-btn" download>Télécharger mon CV</a>
-
-                <div class="icon-links">
-                    <a href="https://www.linkedin.com/in/elouan-bouche-8b3083309/" target="_blank">
-                        <img src="linkedin.png" alt="LinkedIn" class="social-icon">
-                    </a>
-                    <a href="https://github.com/tonpseudo" target="_blank">
-                        <img src="github.png" alt="GitHub" class="social-icon">
-                    </a>
+                <div class="hero__actions">
+                    <a href="#projects" class="btn btn--primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn--ghost">Me contacter</a>
                 </div>
             </div>
-
+            <div class="hero__visual">
+                <div class="hero__card">
+                    <span>Recherche un stage</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Section Outils -->
-    <div class="tools-experiences-container">
-        <div class="tools-box">
-            <h3>Outils que j'utilise</h3>
-            <ul>
-                <li>
-                    <img src="Visual_Studio_Icon.webp" alt="Logo VS" class="tool-logo">
-                    <span>Visual Studio</span>
-                </li>
-                <li>
-                    <img src="Unity.webp" alt="Logo Unity" class="tool-logo">
-                    <span>Unity</span>
-                </li>
-                <li>
-                    <img src="Unreal_Engine-Logo.png" alt="Logo Unreal Engine" class="tool-logo">
-                    <span>Unreal Engine</span>
-                </li>
-                <li>
-                    <img src="python.png" alt="Logo Python" class="tool-logo">
-                    <span>Python</span>
-                </li>
-                <li>
-                    <img src="blender.webp" alt="Logo Blender" class="tool-logo">
-                    <span>Blender</span>
-                </li>
-                <!-- Ajoute d'autres outils ici -->
-            </ul>
-        </div>
-
-        <div class="experiences-box">
-            <h3>Mes Expériences</h3>
-            <ul>
-                <li>
-                    <a href="https://www.raffin.com/" target="_blank">
-                        <img src="henriraffin.webp" alt="Logo HR" class="company-logo">
-                        <div>
-                            <strong>Henri Raffin</strong>
-                            <p>Embossage 3 mois</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.coursier.fr/" target="_blank" class="coursier-logo">
-                        <img src="logo-coursier.webp" alt="Logo coursier" class="company-logo">
-                        <div>
-                            <strong>Coursier.fr</strong>
-                            <p>Livreur 2 mois</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-
-        </div>
-
-    </div>
-
-
-    <section id="projects" class="carousel-section">
-        <div class="carousel-wrapper">
-            <!-- Flèche gauche -->
-            <button class="carousel-arrow left">
-                <img src="arrow-left.png" alt="Précédent">
-            </button>
-
-            <!-- Conteneur principal du carrousel -->
-            <div class="carousel-container">
-                <!-- Slide 1 -->
-                <div class="carousel-slide active">
-                    <div class="carousel-video">
-                        <video src="VideoJeu1LostInPalm.mp4" autoplay muted loop></video>
+    <!-- ABOUT -->
+    <section id="about" class="about-wrapper">
+        <div class="about-inner">
+            <div class="about-extra">
+                <div class="extra-card">
+                    <h2>Mes Outils</h2>
+                    <div class="tools-grid">
+                        <div class="tool-item"><img src="Unity.webp" alt="Unity"><span>Unity</span></div>
+                        <div class="tool-item"><img src="Unreal_Engine-Logo.png" alt="UE"><span>Unreal Engine</span></div>
+                        <div class="tool-item"><img src="Visual_Studio_Icon.webp" alt="VS"><span>Visual Studio</span></div>
+                        <div class="tool-item"><img src="python.png" alt="Python"><span>Python</span></div>
+                        <div class="tool-item"><img src="Blender.webp" alt="Blender"><span>Blender</span></div>
+                        <div class="tool-item"><img src="Aseprite.webp" alt="Aseprite"><span>Aseprite</span></div>
                     </div>
-                    <div class="carousel-info">
+                </div>
+                <div class="extra-card">
+                    <h2>Mes Expériences</h2>
+                    <div class="experience-list">
+                        <a href="https://www.coursier.fr/" target="_blank" class="experience-item">
+                            <img src="logo-coursier.webp" alt="Coursier.fr">
+                            <span>Coursier.fr — Livreur</span>
+                        </a>
+                        <a href="https://www.raffin.com/" target="_blank" class="experience-item">
+                            <img src="henriraffin.webp" alt="Henri Raffin">
+                            <span>Henri Raffin - Embossage</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY — timeline horizontale -->
+    <section id="journey" class="journey-wrapper">
+        <h2 class="journey-title">Mon Parcours</h2>
+        <div class="timeline-scroll">
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-connector"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022</span>
+                        <h3 class="timeline-title">Premiers Pas en Game Dev</h3>
+                        <p class="timeline-subtitle">Apprentissage autodidacte</p>
+                        <p class="timeline-description">Découverte de Unity et des bases de la programmation orientée objet avec C#.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-connector"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023</span>
+                        <h3 class="timeline-title">Projet SpacefishShooter</h3>
+                        <p class="timeline-subtitle">Développement C++ / SFML</p>
+                        <p class="timeline-description">Création d'un shoot'em up en équipe de 3. Collisions, combat, boss et direction artistique.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-connector"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 — Présent</span>
+                        <h3 class="timeline-title">École de Game Design</h3>
+                        <p class="timeline-subtitle">Spécialisation Programmation</p>
+                        <p class="timeline-description">Formation intensive en développement jeux vidéo : Unity, C# et systèmes procéduraux.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS — carrousel -->
+    <section id="projects" class="projects-wrapper">
+        <h2 class="projects-title">Quelques Projets</h2>
+
+        <div class="carousel">
+            <div class="carousel-track">
+
+                <!-- SLIDE 1 -->
+                <div class="carousel-item active">
+                    <div class="carousel-left">
+                        <video src="VideoJeu1LostInPalm.mp4" autoplay muted loop playsinline class="carousel-video"></video>
+                    </div>
+                    <div class="carousel-right">
                         <h3>Lost In Palms</h3>
-                        <p>Un projet de groupe à 3. Je me suis occupé de la partie de l'île, la génération de la flore et le système de "métier" (creuser, miner et couper).</p>
-                        <div class="button-group">
-                            <a href="https://github.com/tonpseudo/projet1" class="project-btn" target="_blank">Voir sur GitHub</a>
-                            <a href="Project.html" class="project-btn">Voir Tous les Projets</a>
+                        <p>Petite description du projet, ce qu'il fait, ce que tu as appris, les mécaniques, les systèmes, etc.</p>
+                        <div class="carousel-actions">
+                            <a href="Projet.html" class="btn btn--primary">Voir tous les projets</a>
+                            <a href="https://github.com/TonGitHub" target="_blank" class="btn btn--ghost">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                                Voir sur GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
-                <div class="carousel-slide">
-                    <div class="carousel-video">
-                        <video src="projet2.mp4" autoplay muted loop></video>
+                <!-- SLIDE 2 -->
+                <div class="carousel-item">
+                    <div class="carousel-left">
+                        <video src="Video_ShootThemUp.mp4" autoplay muted loop playsinline class="carousel-video"></video>
                     </div>
-                    <div class="carousel-info">
-                        <h3>Projet 2 : Autre jeu cool</h3>
-                        <p>Une autre description pour ce projet.</p>
-                        <div class="button-group">
-                            <a href="https://github.com/tonpseudo/projet2" class="project-btn" target="_blank">Voir sur GitHub</a>
-                            <a href="Project.html" class="project-btn">Voir Tous les Projets</a>
+                    <div class="carousel-right">
+                        <h3>SpacefishShooter</h3>
+                        <p>Shooter réalisé à trois, entièrement en C++ avec SFML. Assets faits maison. Je me suis occupé des collisions, du combat, du système de vie, du boss, des crédits et de la DA.</p>
+                        <div class="carousel-actions">
+                            <a href="Projet.html" class="btn btn--primary">Voir tous les projets</a>
+                            <a href="https://github.com/TonGitHub" target="_blank" class="btn btn--ghost">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                                Voir sur GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- SLIDE 3 -->
+                <div class="carousel-item">
+                    <div class="carousel-left">
+                        <video src="videos/projet3.mp4" autoplay muted loop playsinline class="carousel-video"></video>
+                    </div>
+                    <div class="carousel-right">
+                        <h3>Nom du Projet 3</h3>
+                        <p>Description du projet 3 — ce que tu as fait, les technos utilisées, ce que tu en retiens.</p>
+                        <div class="carousel-actions">
+                            <a href="Projet.html" class="btn btn--primary">Voir tous les projets</a>
+                            <a href="https://github.com/TonGitHub" target="_blank" class="btn btn--ghost">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                                Voir sur GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /carousel-track -->
+
+            <div class="carousel-nav">
+                <button class="carousel-prev" aria-label="Précédent">&#8592;</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+                <button class="carousel-next" aria-label="Suivant">&#8594;</button>
             </div>
-
-            <!-- Flèche droite -->
-            <button class="carousel-arrow right">
-                <img src="arrow-right.png" alt="Suivant">
-            </button>
         </div>
     </section>
 
-
-
-
-    <footer id="contact" class="site-footer">
+    <!-- FOOTER -->
+    <footer id="contact" class="main-footer">
         <div class="footer-content">
-            <ul class="footer-links">
-                <li><a href="#about">A Propos</a></li>
-                <li><a href="#projects">Mes Projets</a></li>
-                <li><a href="#contact">Me Contacter</a></li>
-            </ul>
-
-            <div class="footer-contact">
-                <p>Actuellement en recherche de Stage</p>
-                <p>Email : <a href="mailto:elouan.bouche@gmail.com">elouan.bouche@gmail.com</a></p>
-                <a href="https://www.linkedin.com/in/elouan-bouche-8b3083309/" target="_blank">
-                    <img src="logo-linkedin.png" alt="LinkedIn" class="social-icon">
-                </a>
+            <p class="footer-name">© 2025 — Elouan Bouché</p>
+            <p class="footer-mail">
+                <a href="mailto:elouan.bouche@example.com">elouan.bouche@example.com</a>
+            </p>
+            <div class="footer-links">
+                <a href="https://github.com/TonGitHub" target="_blank" class="btn btn--footer">GitHub</a>
+                <a href="https://www.linkedin.com/in/TonLinkedIn" target="_blank" class="btn btn--footer">LinkedIn</a>
+                <a href="https://TonItchIo.itch.io" target="_blank" class="btn btn--footer">itch.io</a>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
