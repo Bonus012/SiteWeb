@@ -13,14 +13,14 @@ const PROJECTS = [
         github: "https://github.com/Bonus012/Pokemon-Console-Cs", cahier: "../Pdf/CDC_Bases_du_Cs_1.pdf",
     },
     {
-        name: "Project Beta",
-        tags: ["unreal", "cpp"],
-        description: "Un FPS sous Unreal Engine 5 utilisant Lumen et Nanite. Gameplay inspiré de l'immersive sim avec des interactions physiques poussées, un système d'inventaire custom en C++ et un éditeur de niveaux procédural.",
+        name: "Projet Sauvegarde",
+        tags: ["cs", "unity", "1sem"],
+        description: "Le but de ce projet était de concevoir une base de données capable de stocker l’ensemble des statistiques du joueur de manière structurée et fiable. Nous avons mis en place un système permettant d’enregistrer automatiquement ces données au fil de la progression. Enfin, nous avons développé une fonctionnalité de chargement permettant de restaurer l’état complet du joueur à chaque lancement du jeu.",
         media: [
-            { type: "image", src: "https://placehold.co/800x450/1a1a2e/a855f7?text=Screenshot+1" },
-            { type: "youtube", src: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+            { type: "image", src: "../Image/Save1.png" },
+            { type: "image", src: "../Image/Save2.png" },
         ],
-        github: "https://github.com/", itch: "https://itch.io/", cahier: "#",
+        github: "https://github.com/", cahier: "../Pdf/CDC Persistance des données 2.pdf",
     },
     {
         name: "Project Gamma",
