@@ -15,26 +15,31 @@ const PROJECTS = [
     {
         name: "Projet Sauvegarde",
         tags: ["cs", "unity", "1sem"],
-        description: "Le but de ce projet était de concevoir une base de données capable de stocker l’ensemble des statistiques du joueur de manière structurée et fiable. Nous avons mis en place un système permettant d’enregistrer automatiquement ces données au fil de la progression. Enfin, nous avons développé une fonctionnalité de chargement permettant de restaurer l’état complet du joueur à chaque lancement du jeu.",
+        description: "Le but de ce projet était de concevoir une base de données capable de stocker l’ensemble des statistiques du joueur de manière structurée et fiable. Nous avons mis en place un système permettant d’enregistrer automatiquement ces données au fil de la progression. Enfin, nous avons développé une fonctionnalité de chargement permettant de restaurer l’état complet du joueur à chaque lancement du jeu.  PS : Pas de github puisque il y'a la clé API google de mon coéquipier dans firebase",
         media: [
             { type: "image", src: "../Image/Save1.png" },
             { type: "image", src: "../Image/Save2.png" },
         ],
-        github: "https://github.com/", cahier: "../Pdf/CDC Persistance des données 2.pdf",
+        cahier: "../Pdf/CDC Persistance des données 2.pdf",
     },
     {
-        name: "Project Gamma",
-        tags: ["godot", "python"],
-        description: "Un RPG top-down développé sous Godot 4, associé à des outils Python pour la génération automatique de cartes via bruit de Perlin. Interface de debug et pipeline d'assets entièrement automatisé.",
+        name: "Project FPS",
+        tags: ["cs", "unity", "1sem"],
+        description: "Le but de ce projet était de créer un FPS satisfaisant, centré sur des sensations de tir percutantes et un maximum de feedback visuel et sonore. Nous avons réparti le travail de manière complémentaire : je me suis occupé de toute la gestion des armes et du système de tir, ainsi que de la boutique d’armes et du système d’équipement modulaire, tandis que mon coéquipier a conçu la map et développé le robot ennemi ainsi que son comportement de mort. Ensemble, nous avons construit une expérience dynamique et cohérente, où chaque élément contribue à renforcer le feeling du gameplay.",
         media: [{ type: "image", src: "https://placehold.co/800x450/0f1a10/22c55e?text=Screenshot+1" }],
-        github: "https://github.com/", itch: "https://itch.io/", cahier: "#",
+        github: "https://github.com/", cahier: "../Pdf/CDC_FPS_3.pdf",
     },
     {
-        name: "Project Delta",
-        tags: ["opengl", "cpp"],
-        description: "Un moteur de rendu 3D minimaliste from scratch en OpenGL et C++. Implémentation d'un pipeline de deferred rendering, shadow mapping, SSAO et post-processing. Exercice académique sur les APIs graphiques bas niveau.",
-        media: [{ type: "image", src: "https://placehold.co/800x450/1a1010/ef4444?text=Screenshot+1" }],
-        github: "https://github.com/", itch: null, cahier: "#",
+        name: "Generation Procedural",
+        tags: ["cs", "unity", "1sem"],
+        description: "Ce projet, développé en une semaine, consistait à créer un jeu procédural capable de générer un monde dynamique et renouvelé à chaque partie. Je me suis chargé de toute la partie technique liée à la génération procédurale : création du terrain, gestion des chunks, système de creusage et de placement de blocs, ainsi que l’optimisation de ces mécaniques pour garantir une expérience fluide. De son côté, mon coéquipier a développé les ennemis, l’inventaire et le système de combat, ce qui nous a permis de construire un prototype complet mêlant exploration, action et construction.",
+        media: [
+            { type: "image", src: "../Image/GenPro_1.png" },
+            { type: "image", src: "../Image/GenPro_2.png" },
+            { type: "image", src: "../Image/GenPro_3.png" },
+            { type: "video", src: "../Video/Jeu_Strangeraria.mp4" }
+        ],
+        github: "https://github.com/Bonus012/Generation_Procedural", itch: null, cahier: "../Pdf/CDC_Génération_Procedurale_4.pdf",
     },
     {
         name: "Project Epsilon",
