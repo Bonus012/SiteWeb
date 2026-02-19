@@ -2,6 +2,7 @@
    DONNÉES
 ================================================================ */
 const PROJECTS = [
+    //P1
     {
         name: "Pokemon Console",
         tags: ["cs", "1sem"],
@@ -12,6 +13,7 @@ const PROJECTS = [
         ],
         github: "https://github.com/Bonus012/Pokemon-Console-Cs", cahier: "../Pdf/CDC_Bases_du_Cs_1.pdf",
     },
+    //P2
     {
         name: "Projet Sauvegarde",
         tags: ["cs", "unity", "1sem"],
@@ -22,6 +24,7 @@ const PROJECTS = [
         ],
         cahier: "../Pdf/CDC Persistance des données 2.pdf",
     },
+    //P3
     {
         name: "Project FPS",
         tags: ["cs", "unity", "1sem"],
@@ -29,6 +32,7 @@ const PROJECTS = [
         media: [{ type: "image", src: "https://placehold.co/800x450/0f1a10/22c55e?text=Screenshot+1" }],
         github: "https://github.com/", cahier: "../Pdf/CDC_FPS_3.pdf",
     },
+    //P4
     {
         name: "Generation Procedural",
         tags: ["cs", "unity", "1sem"],
@@ -41,15 +45,16 @@ const PROJECTS = [
         ],
         github: "https://github.com/Bonus012/Generation_Procedural", itch: null, cahier: "../Pdf/CDC_Génération_Procedurale_4.pdf",
     },
+    //P5
     {
-        name: "Project Epsilon",
-        tags: ["unity", "cs"],
-        description: "Un puzzle-game VR développé avec Unity XR Interaction Toolkit. Le joueur manipule des objets physiques pour résoudre des énigmes dans un environnement minimaliste. Prise en charge Meta Quest 2 & 3.",
+        name: "Project 3C",
+        tags: ["unity", "cs", "1sem"],
+        description: "Ce projet 3C avait pour objectif de mettre en place un système complet de contrôle du personnage, de la caméra et du gameplay. Nous avons choisi d’aller plus loin que les attentes initiales en ajoutant un mode multijoueur local. De mon côté, je me suis occupé de toute la génération aléatoire de la map, de la création des héros modulaires ainsi que du système de capacités modulaires. Mon coéquipier, lui, a géré l’intégration du multijoueur local, la caméra et l’ensemble des transitions, ce qui nous a permis de construire une expérience cohérente et dynamique.",
         media: [
-            { type: "image", src: "https://placehold.co/800x450/101a2a/38bdf8?text=Screenshot+1" },
-            { type: "image", src: "https://placehold.co/800x450/101a2a/38bdf8?text=Screenshot+2" },
+            { type: "image", src: "../Image/ProjMultiLocal_1.png" },
+            { type: "image", src: "../Image/ProjMultiLocal_2.png" },
         ],
-        github: "https://github.com/", itch: "https://itch.io/", cahier: "#",
+        github: "https://github.com/", cahier: "../Pdf/CDC_3C_5.pdf",
     },
     {
         name: "Project Zeta",
