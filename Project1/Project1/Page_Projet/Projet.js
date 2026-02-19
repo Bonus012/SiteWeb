@@ -10,7 +10,7 @@ const PROJECTS = [
             { type: "image", src: "../Image/PokemonMinia.png" },
             { type: "video", src: "../Video/videoPokemon.mp4" },
         ],
-        github: "https://github.com/", cahier: "../Pdf/CDC_Bases_du_Cs_1.pdf",
+        github: "https://github.com/Bonus012/Pokemon-Console-Cs", cahier: "../Pdf/CDC_Bases_du_Cs_1.pdf",
     },
     {
         name: "Project Beta",
