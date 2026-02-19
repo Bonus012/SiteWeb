@@ -67,7 +67,7 @@ const PROJECTS = [
             { type: "image", src: "../Image/MafiaWar_2.png" },
             { type: "image", src: "../Image/MafiaWar_3.png" },
         ],
-        github: "https://github.com/", cahier: "../Pdf/CDC_UI_UX 6.pdf",
+        github: "https://github.com/Bonus012/Projet_UI-UX_MafiaWar", cahier: "../Pdf/CDC_UI_UX 6.pdf",
     },
     //P7
     {
@@ -78,7 +78,29 @@ const PROJECTS = [
             { type: "image", src: "../Image/Shader.png" },
             { type: "video", src: "../Video/Shader.mp4" },
         ],
-        github: "https://github.com/", cahier: "../Pdf/CDC_Shader_7.pdf",
+        github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_Shader_7.pdf",
+    },
+    //P8
+    {
+        name: "Spacefish Shooter",
+        tags: ["cpp", "2sem"],
+        description: "Shooter réalisé à trois, entièrement en C++ avec SFML. Assets faits maison. Je me suis occupé des collisions, du combat, du système de vie, du boss, des crédits et de la DA.",
+        media: [
+            { type: "image", src: "../Image/Spacefishshooter.png" },
+            { type: "video", src: "../Video/Video_ShootThemUp.mp4" },
+        ],
+        github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_Shader_7.pdf",
+    },
+    //P9
+    {
+        name: "Lost in Palm",
+        tags: ["cpp", "2sem", "solo"],
+        description: "Ce projet réalisé avec SFML consistait à développer un petit jeu en 2D reposant sur une gestion précise des tiles et de l’environnement. J’ai pris en charge la mise en place du système de tuiles, ainsi que les mécaniques de creusage, de coupe d’arbres et de minage. Puis pour finir, j'ai travaillé sur les animaux et leur IA, ce qui a permis de donner vie au monde et d’enrichir l’expérience de jeu.",
+        media: [
+            { type: "image", src: "../Image/Lostinpalm.png" },
+            { type: "video", src: "../Video/VideoJeu1LostInPalm.mp4" },
+        ],
+        github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_Shader_7.pdf",
     },
 ];
 
