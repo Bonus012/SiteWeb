@@ -1,0 +1,129 @@
+Excellente initiative de vouloir améliorer cet article ! Voici mon analyse détaillée basée sur les bonnes pratiques de tes précédents articles.
+Points forts à conserver ✅
+
+Accroche solide : "Créer un système de génération procédurale en une semaine..." - contexte immédiat
+Terminologie professionnelle : génération procédurale, architecture modulable, système de minage
+Référence inspirante : Terraria (bon parallèle)
+Réflexion sur les contraintes : temps, choix d'architecture
+Dimension collaborative : mention du binôme et de la répartition des tâches
+
+Points à améliorer 🔧
+1. PROBLÈME MAJEUR : Trop académique, pas assez personnel
+❌ Ton actuel : "L'enjeu principal consistait à produire un environnement..."
+
+Style trop formel et distant
+On dirait un rapport de stage, pas un article LinkedIn engageant
+Manque d'émotion et de vécu personnel
+
+✅ Ton à adopter (comme dans ton article Pokemon) :
+
+"J'ai découvert...", "Je me suis confronté à...", "Ce qui m'a le plus marqué..."
+Raconter TON expérience, pas décrire le projet de façon neutre
+
+2. Structure narrative à revoir
+❌ Actuellement : Description → Description → Description → Conclusion rapide
+✅ Structure idéale (comme ton 1er article) :
+
+Accroche + Contexte (✅ OK)
+Organisation du projet (⚠️ À développer)
+UN défi technique précis (❌ Manque de focus)
+Apprentissages concrets (⚠️ Trop vague)
+Soft skills / Dimension humaine (⚠️ Superficiel)
+Appel à l'action (❌ Absent)
+
+3. Manque de détails techniques exploitables
+❌ Phrases trop générales :
+
+"architecture pensée pour contrôler l'aléatoire"
+"structure du terrain, gestion des couches"
+
+✅ Donne des exemples concrets :
+
+Algorithme de bruit de Perlin pour la génération ?
+Tilemap ou système de chunks ?
+Comment tu gères la persistance des blocs détruits ?
+Structure de données utilisée (dictionnaire, grille 2D) ?
+
+4. "Je" vs description impersonnelle
+❌ Trop de phrases passives :
+
+"Plusieurs biomes distincts ont été intégrés"
+"un système de minage a été mis en place"
+"La priorité a été donnée"
+
+✅ Reformule à la première personne :
+
+"J'ai intégré plusieurs biomes distincts"
+"J'ai développé un système de minage"
+"J'ai priorisé la robustesse"
+
+5. Manque le "défi héros"
+Dans ton article Pokemon, tu as : "Face aux limites graphiques de la console, nous avons priorisé..."
+❌ Ici : Pas de moment où tu expliques UN problème spécifique que tu as résolu
+✅ Exemple à développer :
+
+"Le plus gros challenge : garantir la cohérence des biomes sans discontinuités visuelles. J'ai dû implémenter un système de transition progressive basé sur..."
+
+6. Apprentissages trop vagues
+❌ "Ce projet a été une expérience particulièrement enrichissante"
+
+Qu'est-ce que tu as VRAIMENT appris ?
+Quelle compétence technique peux-tu mettre en avant maintenant ?
+
+✅ Sois spécifique (comme dans ton 1er article) :
+
+"Je maîtrise désormais la génération procédurale avec [algorithme]"
+"J'ai compris l'importance de [concept] pour [résultat]"
+
+7. Appel à l'action manquant
+❌ L'article se termine sur le portfolio
+✅ Comme dans ton 1er article, ajoute :
+
+Que tu cherches un stage/alternance dès mai
+Invitation à te contacter en MP
+Hashtags pertinents (#gamedev #unity #proceduralgeneration #alternance)
+
+8. Remerciements incomplets
+❌ "Merci à Rutkowski Yona et au Gaming Campus"
+✅ Précise l'apport de Simon Billet :
+
+"Merci à Simon Billet : ton travail sur le gameplay (IA, combat, inventaire) s'est parfaitement intégré à mon système de génération procédurale"
+
+9. Détails à corriger
+
+"coéquipier" → "coéquipier"
+"s'occuper" → "s'est occupé" (conjugaison)
+"Simon Billet" puis "Simon billet" → Uniformiser (majuscule)
+"portfolio.fr" → Mettre ton vrai lien portfolio
+
+
+Version améliorée proposée
+BILLET Simon
+Article LinkedIn Projet X
+Créer un système de génération procédurale en une semaine : quand Terraria inspire notre architecture technique.
+Pour ce premier projet du semestre, notre formateur Yona Rutkowski (Directeur Technique chez Voltige Games) nous a lancé un défi ambitieux : concevoir un jeu d'exploration et de survie en binôme sur Unity, avec génération procédurale du monde. Inspirés par Terraria, nous voulions cette sensation de liberté où chaque partie offre un monde unique à explorer et à façonner.
+Organisation et répartition des rôles. Simon Billet a pris en charge le cœur du gameplay : IA ennemie, système de combat et inventaire. De mon côté, j'ai relevé le défi technique principal : créer un monde généré procéduralement, cohérent, modulable et surtout jouable.
+Le challenge qui m'a le plus marqué : garantir la cohérence des biomes sans ruptures visuelles.
+Générer de l'aléatoire, c'est facile. Le contrôler pour obtenir un résultat exploitable, c'est une autre histoire. J'ai intégré plusieurs biomes distincts (forêt, désert, cavernes...), chacun avec ses propres règles de composition, ressources et spécificités visuelles. Le vrai défi était d'éviter les transitions brutales et les zones incohérentes. J'ai implémenté un système de bruit de Perlin multicouche pour générer le terrain, complété par des règles de transition progressive entre biomes. Cette approche m'a permis de contrôler l'aléatoire plutôt que de le subir.
+Mais le cœur du projet, c'est le système de minage destructible.
+Comme dans Terraria, le joueur peut modifier le terrain bloc par bloc. Techniquement, cela signifie : génération dynamique du monde, gestion des couches de terrain, destruction contrôlée des blocs, et persistance des modifications. J'ai structuré le terrain en chunks pour optimiser les performances et utilisé un système de grille 2D pour stocker l'état de chaque bloc. Cette architecture modulaire m'a permis d'itérer rapidement et d'intégrer facilement les interactions du joueur.
+Ce que je retiens techniquement : la maîtrise de la génération procédurale avec le bruit de Perlin, la gestion d'un monde en chunks, et surtout une meilleure compréhension de l'équilibre entre aléatoire et contrôle. Mais au-delà de la technique, j'ai appris à prioriser : face à la contrainte d'une semaine, j'ai choisi la robustesse et la modularité plutôt que la complexité excessive. Cette approche pragmatique nous a permis de livrer un prototype complet et agréable à explorer.
+La dimension binôme a été déterminante. Chaque décision devait être alignée avec Simon pour que son gameplay s'intègre parfaitement à mon système de génération. Cette communication constante nous a permis de maintenir un rythme de production élevé et de transformer une idée ambitieuse en résultat concret en sept jours.
+Découvrez le gameplay ci-dessous. Si vous voulez en discuter ou découvrir plus de projets, voici mon portfolio : https://exootik.github.io/Portfolio/
+N'hésitez pas à me contacter en MP pour échanger, j'en serai ravi ! Je suis toujours à la recherche d'une belle équipe pour un stage ou une alternance dès mai 2026.
+[VIDEO DE GAMEPLAY]
+Merci à Yona Rutkowski pour son accompagnement technique précieux et au Gaming Campus pour ce projet formateur. Merci également à Simon Billet : ton travail sur le gameplay (IA, combat, inventaire) s'est parfaitement intégré à mon système de génération, créant une expérience de jeu complète et cohérente.
+#gamedev #unity #proceduralgeneration #terraria #alternance #gamingcampus
+
+Checklist finale pour tes prochains articles
+
+ Utiliser "je" et raconter TON expérience (pas un rapport)
+ Structurer : Accroche → Organisation → UN défi précis → Apprentissages → Soft skills → Appel à l'action
+ Donner des détails techniques exploitables (algorithmes, structures de données)
+ Expliquer le POURQUOI de tes choix, pas juste le QUOI
+ Relier technique et expérience utilisateur/gameplay
+ Mentionner stage/alternance disponible
+ Remercier en précisant l'apport de chacun
+ Hashtags pertinents
+
+Veux-tu que je t'aide à affiner encore certaines parties ou que je te donne des conseils sur un autre aspect ?

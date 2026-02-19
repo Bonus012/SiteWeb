@@ -563,9 +563,8 @@ body.modal-open .project-card:not(.is-expanded) {
     color: #eee;
     text-align: center;
     padding: 2rem 1rem;
-    border-top: 1px solid rgba(148,163,184,.1);
-    position: relative;
-    z-index: 1;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 .footer-content {
@@ -575,13 +574,13 @@ body.modal-open .project-card:not(.is-expanded) {
 
 .footer-name {
     font-weight: bold;
-    margin-bottom: .4rem;
+    margin-bottom: 0.5rem;
 }
 
 .footer-mail a {
     color: #eee;
     text-decoration: none;
-    transition: color .3s;
+    transition: color 0.3s;
 }
 
     .footer-mail a:hover {
@@ -595,16 +594,16 @@ body.modal-open .project-card:not(.is-expanded) {
     gap: 1rem;
 }
 
-.btn-footer {
+.btn--footer {
     background: #222;
     color: #eee;
-    padding: .6rem 1.2rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 5px;
     text-decoration: none;
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
-    .btn-footer:hover {
+    .btn--footer:hover {
         background: linear-gradient(135deg, var(--accent), var(--accent-purple));
         transform: translateY(-3px);
     }
