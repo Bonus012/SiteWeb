@@ -47,24 +47,38 @@ const PROJECTS = [
     },
     //P5
     {
-        name: "Project 3C",
+        name: "The Hundreth Ascend",
         tags: ["unity", "cs", "1sem"],
         description: "Ce projet 3C avait pour objectif de mettre en place un système complet de contrôle du personnage, de la caméra et du gameplay. Nous avons choisi d’aller plus loin que les attentes initiales en ajoutant un mode multijoueur local. De mon côté, je me suis occupé de toute la génération aléatoire de la map, de la création des héros modulaires ainsi que du système de capacités modulaires. Mon coéquipier, lui, a géré l’intégration du multijoueur local, la caméra et l’ensemble des transitions, ce qui nous a permis de construire une expérience cohérente et dynamique.",
         media: [
             { type: "image", src: "../Image/ProjMultiLocal_1.png" },
             { type: "image", src: "../Image/ProjMultiLocal_2.png" },
         ],
-        github: "https://github.com/", cahier: "../Pdf/CDC_3C_5.pdf",
+        github: "https://github.com/Bonus012/Projet_3C_The_Hundreth_Ascend", cahier: "../Pdf/CDC_3C_5.pdf",
     },
+    //P6
     {
-        name: "Project Zeta",
-        tags: ["unreal", "cpp", "python"],
-        description: "Un prototype de simulation RTS sous Unreal Engine 5. L'IA des unités repose sur un système de pathfinding A* custom. Des scripts Python gèrent la pipeline de build et les tests automatisés.",
+        name: "Mafia War",
+        tags: ["unity", "cs", "solo", "1sem"],
+        description: "Il s’agit d’un jeu entièrement réalisé en UI sur Unity, inspiré d’Age of War et de Plants vs Zombies. L’objectif était de recréer un gameplay stratégique basé sur la gestion de lignes, les unités et la progression, mais sans utiliser de sprites ou de scènes 2D classiques : tout est construit en interface. Ce choix nous a permis d’explorer une approche différente du game design, centrée sur la lisibilité, la modularité et la réactivité de l’UI.",
         media: [
-            { type: "image", src: "https://placehold.co/800x450/1a1520/f59e0b?text=Screenshot+1" },
-            { type: "youtube", src: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+            { type: "image", src: "../Image/MafiaWar_1.png" },
+            { type: "video", src: "../Video/MafiaWar.mp4" },
+            { type: "image", src: "../Image/MafiaWar_2.png" },
+            { type: "image", src: "../Image/MafiaWar_3.png" },
         ],
-        github: "https://github.com/", itch: "https://itch.io/", cahier: "#",
+        github: "https://github.com/", cahier: "../Pdf/CDC_UI_UX 6.pdf",
+    },
+    //P7
+    {
+        name: "Projet Shader",
+        tags: ["unity", "cs", "solo", "1sem"],
+        description: "Il s’agit d’un petit jeu conçu pour mettre en valeur les shaders Unity et approfondir la maîtrise de Shader Graph. L’objectif était d’expérimenter différents effets visuels, de comprendre leur fonctionnement interne et d’apprendre à créer des matériaux dynamiques et stylisés. Ce projet nous a permis d’explorer la logique des graphes, d’optimiser les rendus et de mieux comprendre le pipeline visuel d’Unity.",
+        media: [
+            { type: "image", src: "../Image/Shader.png" },
+            { type: "video", src: "../Video/Shader.mp4" },
+        ],
+        github: "https://github.com/", cahier: "../Pdf/CDC_Shader_7.pdf",
     },
 ];
 
