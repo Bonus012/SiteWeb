@@ -3,14 +3,14 @@
 ================================================================ */
 const PROJECTS = [
     {
-        name: "Project Alpha",
-        tags: ["unity", "cs"],
-        description: "Un jeu de plateforme 2D développé sous Unity avec un système de dialogue dynamique, de la génération procédurale de niveaux et une IA ennemie basée sur des arbres de comportement. Le projet explore la narration interactive et les mécaniques de roguelite.",
+        name: "Pokemon Console",
+        tags: ["cs", "1sem"],
+        description: "Défi d’une semaine : créer un Pokémon‑like jouable en console, développé en trinôme pour retrouver l’esprit des jeux de notre enfance. La responsabilité portait sur la gestion complète de la carte et des déplacements du joueur, avec un système d’interaction permettant de ramasser des objets disséminés dans le monde. La logique des dresseurs ennemis a également été mise en place : détection du joueur, déclenchement automatique des combats et transitions de scène fluides pour assurer une expérience cohérente malgré les contraintes d’un jeu entièrement textuel.",
         media: [
-            { type: "image", src: "https://placehold.co/800x450/1a2040/5b8cff?text=Screenshot+1" },
-            { type: "image", src: "https://placehold.co/800x450/1a2040/5b8cff?text=Screenshot+2" },
+            { type: "image", src: "../Image/PokemonMinia.png" },
+            { type: "video", src: "../Video/videoPokemon.mp4" },
         ],
-        github: "https://github.com/", itch: "https://itch.io/", cahier: "#",
+        github: "https://github.com/", cahier: "../Pdf/CDC_Bases_du_Cs_1.pdf",
     },
     {
         name: "Project Beta",
@@ -63,9 +63,9 @@ const TAG_META = {
     unreal: { label: "Unreal Engine",  cls: "ptag-unreal" },
     cpp:    { label: "C++",            cls: "ptag-cpp"    },
     cs:     { label: "C#",             cls: "ptag-cs"     },
-    python: { label: "Python",         cls: "ptag-python" },
-    godot:  { label: "Godot",          cls: "ptag-godot"  },
-    opengl: { label: "OpenGL",         cls: "ptag-opengl" },
+    "1sem": { label: "1 Semaine",         cls: "ptag-1sem" },
+    "2sem":  { label: "2 Semaines",          cls: "ptag-2sem"  },
+    solo: { label: "Solo",         cls: "ptag-solo" },
 };
 
 function makeTags(tags) {

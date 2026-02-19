@@ -332,17 +332,17 @@ body.modal-open .project-card:not(.is-expanded) {
     background: rgba(139,92,246,.1);
 }
 
-.ptag-python {
+.ptag-1sem {
     color: #facc15;
     background: rgba(250,204,21,.1);
 }
 
-.ptag-godot {
+.ptag-2sem {
     color: #22c55e;
     background: rgba(34,197,94,.1);
 }
 
-.ptag-opengl {
+.ptag-solo {
     color: #ef4444;
     background: rgba(239,68,68,.1);
 }
