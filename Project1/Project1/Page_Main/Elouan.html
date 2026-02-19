@@ -30,7 +30,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Conteneur scrollable sur mobile */
         .timeline-scroll {
             overflow-x: auto;
             padding-bottom: 1rem;
@@ -38,7 +37,6 @@
             scrollbar-color: var(--accent) transparent;
         }
 
-        /* La timeline en ligne */
         .timeline {
             display: flex;
             gap: 0;
@@ -48,7 +46,6 @@
             align-items: flex-start;
         }
 
-            /* Ligne horizontale du milieu */
             .timeline::before {
                 content: "";
                 position: absolute;
@@ -79,7 +76,6 @@
                 transform: translateY(0);
             }
 
-        /* Point sur la ligne */
         .timeline-dot {
             width: 18px;
             height: 18px;
@@ -103,7 +99,6 @@
             }
         }
 
-        /* Ligne verticale entre le dot et la carte */
         .timeline-connector {
             width: 2px;
             height: 28px;
@@ -160,7 +155,7 @@
         }
 
         /* ══════════════════════════════════════════
-           CARROUSEL AMÉLIORÉ
+           CARROUSEL
         ══════════════════════════════════════════ */
         .projects-wrapper {
             max-width: 1120px;
@@ -188,7 +183,6 @@
             width: 100%;
         }
 
-        /* Track qui contient toutes les slides */
         .carousel-track {
             position: relative;
             min-height: 340px;
@@ -219,7 +213,6 @@
                 transform: translateX(-60px);
             }
 
-        /* Vidéo / média */
         .carousel-left {
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -241,7 +234,6 @@
             transform: scale(1.03);
         }
 
-        /* Texte */
         .carousel-right {
             display: flex;
             flex-direction: column;
@@ -274,7 +266,6 @@
             margin-top: 0.5rem;
         }
 
-        /* Navigation */
         .carousel-nav {
             display: flex;
             align-items: center;
@@ -305,7 +296,6 @@
                     box-shadow: 0 8px 24px rgba(91,140,255,.35);
                 }
 
-        /* Indicateurs dots */
         .carousel-dots {
             display: flex;
             gap: 0.5rem;
@@ -329,7 +319,6 @@
                 background: linear-gradient(90deg, var(--accent), var(--accent-purple));
             }
 
-        /* ══ RESPONSIVE ══ */
         @media (max-width: 768px) {
             .carousel-item {
                 grid-template-columns: 1fr;
@@ -419,23 +408,23 @@
                 <div class="extra-card">
                     <h2>Mes Outils</h2>
                     <div class="tools-grid">
-                        <div class="tool-item"><img src="Unity.webp" alt="Unity"><span>Unity</span></div>
-                        <div class="tool-item"><img src="Unreal_Engine-Logo.png" alt="UE"><span>Unreal Engine</span></div>
-                        <div class="tool-item"><img src="Visual_Studio_Icon.webp" alt="VS"><span>Visual Studio</span></div>
-                        <div class="tool-item"><img src="python.png" alt="Python"><span>Python</span></div>
-                        <div class="tool-item"><img src="Blender.webp" alt="Blender"><span>Blender</span></div>
-                        <div class="tool-item"><img src="Aseprite.webp" alt="Aseprite"><span>Aseprite</span></div>
+                        <div class="tool-item"><img src="../Image/Unity.webp" alt="Unity"><span>Unity</span></div>
+                        <div class="tool-item"><img src="../Image/Unreal_Engine-Logo.png" alt="UE"><span>Unreal Engine</span></div>
+                        <div class="tool-item"><img src="../Image/Visual_Studio_Icon.webp" alt="VS"><span>Visual Studio</span></div>
+                        <div class="tool-item"><img src="../Image/python.png" alt="Python"><span>Python</span></div>
+                        <div class="tool-item"><img src="../Image/Blender.webp" alt="Blender"><span>Blender</span></div>
+                        <div class="tool-item"><img src="../Image/Aseprite.webp" alt="Aseprite"><span>Aseprite</span></div>
                     </div>
                 </div>
                 <div class="extra-card">
                     <h2>Mes Expériences</h2>
                     <div class="experience-list">
                         <a href="https://www.coursier.fr/" target="_blank" class="experience-item">
-                            <img src="logo-coursier.webp" alt="Coursier.fr">
+                            <img src="../Image/logo-coursier.webp" alt="Coursier.fr">
                             <span>Coursier.fr — Livreur</span>
                         </a>
                         <a href="https://www.raffin.com/" target="_blank" class="experience-item">
-                            <img src="henriraffin.webp" alt="Henri Raffin">
+                            <img src="../Image/henriraffin.webp" alt="Henri Raffin">
                             <span>Henri Raffin - Embossage</span>
                         </a>
                     </div>
@@ -444,7 +433,7 @@
         </div>
     </section>
 
-    <!-- JOURNEY — timeline horizontale -->
+    <!-- JOURNEY -->
     <section id="journey" class="journey-wrapper">
         <h2 class="journey-title">Mon Parcours</h2>
         <div class="timeline-scroll">
@@ -497,13 +486,13 @@
                 <!-- SLIDE 1 -->
                 <div class="carousel-item active">
                     <div class="carousel-left">
-                        <video src="VideoJeu1LostInPalm.mp4" autoplay muted loop playsinline class="carousel-video"></video>
+                        <video src="../Video/VideoJeu1LostInPalm.mp4" autoplay muted loop playsinline class="carousel-video"></video>
                     </div>
                     <div class="carousel-right">
                         <h3>Lost In Palms</h3>
                         <p>Petite description du projet, ce qu'il fait, ce que tu as appris, les mécaniques, les systèmes, etc.</p>
                         <div class="carousel-actions">
-                            <a href="Projet.html" class="btn btn--primary">Voir tous les projets</a>
+                            <a href="../Page_Projet/Projet.html" class="btn btn--primary">Voir tous les projets</a>
                             <a href="https://github.com/TonGitHub" target="_blank" class="btn btn--ghost">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
                                 Voir sur GitHub
@@ -515,31 +504,13 @@
                 <!-- SLIDE 2 -->
                 <div class="carousel-item">
                     <div class="carousel-left">
-                        <video src="Video_ShootThemUp.mp4" autoplay muted loop playsinline class="carousel-video"></video>
+                        <video src="../Video/Video_ShootThemUp.mp4" autoplay muted loop playsinline class="carousel-video"></video>
                     </div>
                     <div class="carousel-right">
                         <h3>SpacefishShooter</h3>
                         <p>Shooter réalisé à trois, entièrement en C++ avec SFML. Assets faits maison. Je me suis occupé des collisions, du combat, du système de vie, du boss, des crédits et de la DA.</p>
                         <div class="carousel-actions">
-                            <a href="Projet.html" class="btn btn--primary">Voir tous les projets</a>
-                            <a href="https://github.com/TonGitHub" target="_blank" class="btn btn--ghost">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
-                                Voir sur GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SLIDE 3 -->
-                <div class="carousel-item">
-                    <div class="carousel-left">
-                        <video src="videos/projet3.mp4" autoplay muted loop playsinline class="carousel-video"></video>
-                    </div>
-                    <div class="carousel-right">
-                        <h3>Nom du Projet 3</h3>
-                        <p>Description du projet 3 — ce que tu as fait, les technos utilisées, ce que tu en retiens.</p>
-                        <div class="carousel-actions">
-                            <a href="Projet.html" class="btn btn--primary">Voir tous les projets</a>
+                            <a href="../Page_Projet/Projet.html" class="btn btn--primary">Voir tous les projets</a>
                             <a href="https://github.com/TonGitHub" target="_blank" class="btn btn--ghost">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
                                 Voir sur GitHub
@@ -575,4 +546,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

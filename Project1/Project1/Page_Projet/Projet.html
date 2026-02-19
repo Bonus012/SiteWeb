@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projets — Elouan Bouché</title>
+    <link rel="stylesheet" href="Projet.css" />
+</head>
+<body>
+
+    <canvas id="particles"></canvas>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <nav class="nav">
+            <ul class="nav__links" id="navLinks">
+                <li><a href="../Page_Main/Elouan.html">Accueil</a></li>
+                <li><a href="Projet.html" class="active">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <h1>Mes <span>Projets</span></h1>
+        <p>Une sélection de mes réalisations en développement de jeux et logiciels.</p>
+    </section>
+
+    <!-- FILTERS -->
+    <section class="filter-section">
+        <div class="filter-wrapper" id="filterWrapper">
+            <button class="filter-btn active" data-tag="all">Tous</button>
+            <button class="filter-btn" data-tag="unity">Unity</button>
+            <button class="filter-btn" data-tag="unreal">Unreal Engine</button>
+            <button class="filter-btn" data-tag="cpp">C++</button>
+            <button class="filter-btn" data-tag="cs">C#</button>
+            <button class="filter-btn" data-tag="1sem">1 Semaine</button>
+            <button class="filter-btn" data-tag="2sem">2 Semaines</button>
+            <button class="filter-btn" data-tag="perso">Perso</button>
+        </div>
+    </section>
+
+    <!-- GRID -->
+    <main class="projects-section">
+        <div class="projects-grid" id="projectsGrid"></div>
+        <p class="no-results" id="noResults">Aucun projet pour ce filtre.</p>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer" id="contact">
+        <div class="footer-content">
+            <p class="footer-name">© 2025 — Elouan Bouché</p>
+            <p class="footer-mail"><a href="mailto:elouan.bouche@example.com">elouan.bouche@example.com</a></p>
+            <div class="footer-links">
+                <a href="https://github.com/TonGitHub" target="_blank" class="btn-footer">GitHub</a>
+                <a href="https://www.linkedin.com/in/TonLinkedIn" target="_blank" class="btn-footer">LinkedIn</a>
+                <a href="https://TonItchIo.itch.io" target="_blank" class="btn-footer">itch.io</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Projet.js"></script>
+</body>
+</html>
