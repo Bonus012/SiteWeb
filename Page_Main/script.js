@@ -253,7 +253,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     }
 
-    // ââ BUILD DOM âââââââââââââââââââââââââââââââââââââââââ
+    // BUILD DOM 
     function build() {
         layer.innerHTML = '';
         elDots = []; elCards = []; elConns = [];
@@ -308,7 +308,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     }
 
-    // ââ UPDATE ANIMATED (dots + elastic connectors only) ââ
+    // UPDATE ANIMATED (dots + elastic connectors only)
     function updateAnimated(ph) {
         const midY = H * 0.5;
         const amp  = H * 0.28;
@@ -334,7 +334,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     }
 
-    // ââ DRAW WAVE âââââââââââââââââââââââââââââââââââââââââ
+    // DRAW WAVE
     function drawWave(ph) {
         const ctx2 = sineCanvas.getContext('2d');
         ctx2.clearRect(0, 0, W, H);
@@ -407,7 +407,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         ctx2.fillStyle = fill2; ctx2.fill();
     }
 
-    // ââ RESIZE ââââââââââââââââââââââââââââââââââââââââââââ
+    // RESIZE 
     function resize() {
         W = sineCanvas.parentElement.clientWidth;
         H = sineCanvas.parentElement.clientHeight;

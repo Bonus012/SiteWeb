@@ -34,7 +34,7 @@ const PROJECTS = [
     },
     //P4
     {
-        name: "Generation Procedural",
+        name: "Generation Procedurale",
         tags: ["cs", "unity", "1sem"],
         description: "Ce projet, développé en une semaine, consistait à créer un jeu procédural capable de générer un monde dynamique et renouvelé à chaque partie. Je me suis chargé de toute la partie technique liée à la génération procédurale : création du terrain, gestion des chunks, système de creusage et de placement de blocs, ainsi que l’optimisation de ces mécaniques pour garantir une expérience fluide. De son côté, mon coéquipier a développé les ennemis, l’inventaire et le système de combat, ce qui nous a permis de construire un prototype complet mêlant exploration, action et construction.",
         media: [
@@ -52,6 +52,7 @@ const PROJECTS = [
         description: "Ce projet 3C avait pour objectif de mettre en place un système complet de contrôle du personnage, de la caméra et du gameplay. Nous avons choisi d’aller plus loin que les attentes initiales en ajoutant un mode multijoueur local. De mon côté, je me suis occupé de toute la génération aléatoire de la map, de la création des héros modulaires ainsi que du système de capacités modulaires. Mon coéquipier, lui, a géré l’intégration du multijoueur local, la caméra et l’ensemble des transitions, ce qui nous a permis de construire une expérience cohérente et dynamique.",
         media: [
             { type: "image", src: "../Image/ProjMultiLocal_1.png" },
+            { type: "video", src: "../Video/TheHundrethAscentDemo.mp4" },
             { type: "image", src: "../Image/ProjMultiLocal_2.png" },
         ],
         github: "https://github.com/Bonus012/Projet_3C_The_Hundreth_Ascend", cahier: "../Pdf/CDC_3C_5.pdf",
