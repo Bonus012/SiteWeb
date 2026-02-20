@@ -28,12 +28,12 @@ const PROJECTS = [
     {
         name: "Switchbound",
         tags: ["cpp", "2sem", "unreal"],
-        description: "Ce projet réalisé avec SFML consistait à développer un petit jeu en 2D reposant sur une gestion précise des tiles et de l’environnement. J’ai pris en charge la mise en place du système de tuiles, ainsi que les mécaniques de creusage, de coupe d’arbres et de minage. Puis pour finir, j'ai travaillé sur les animaux et leur IA, ce qui a permis de donner vie au monde et d’enrichir l’expérience de jeu.",
+        description: "Jeu solo mêlant escape game et aventure, reposant sur un système de changement de personnage instantané, avec un gameplay asymétrique (robot agile et furtif / robot lourd orienté force brute et vitesse), incluant la conception et l’intégration de l’architecture de gameplay, des interactions, des compétences, des transitions entre personnages, ainsi que le développement de la logique C++ et Blueprints pour un système fluide et modulaire",
         media: [
-            { type: "image", src: "../Image/Lostinpalm.png" },
-            { type: "video", src: "../Video/VideoJeu1LostInPalm.mp4" },
+            { type: "image", src: "../Image/Switchbound.png" },
+            { type: "video", src: "../Video/Switchbound.mp4" },
         ],
-        github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_BlueprintsCpp.pdf",
+        github: "https://github.com/Bonus012/Switchbound_Unreal", cahier: "../Pdf/CDC_BlueprintsCpp.pdf",
     },
     //P4
     {
