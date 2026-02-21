@@ -201,6 +201,43 @@ function applyTranslations() {
 
 // ── Injecter les boutons drapeaux dans le header ──
 function injectLangButtons() {
+    // Inject CSS directly to avoid GitHub Pages caching issues
+    if (!document.getElementById('langStyle')) {
+        const style = document.createElement('style');
+        style.id = 'langStyle';
+        style.textContent = `
+            #langSwitcher {
+                display: flex;
+                gap: 4px;
+                align-items: center;
+                position: absolute;
+                left: 0;
+            }
+            .lang-btn {
+                background: transparent;
+                border: 2px solid transparent;
+                border-radius: 6px;
+                padding: 2px;
+                cursor: pointer;
+                opacity: 0.5;
+                transition: opacity .2s, border-color .2s, transform .2s;
+                line-height: 0;
+            }
+            .lang-btn img {
+                width: 28px !important;
+                height: 20px !important;
+                object-fit: cover !important;
+                border-radius: 3px;
+                display: block;
+            }
+            .lang-btn:hover { opacity: 0.85; transform: scale(1.08); }
+            .lang-btn.active { opacity: 1; border-color: #5b8cff; }
+            @media (max-width: 768px) {
+                #langSwitcher { left: 0; right: auto; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
     const nav = document.querySelector('.nav');
     if (!nav || document.getElementById('langSwitcher')) return;
 
