@@ -91,7 +91,7 @@ const PROJECTS = [
         description: "Objectif du projet : me challenger en développant un jeu où tous les modèles 3D sont générés par script, accompagnés d’une physique entièrement codée à la main. Un exercice complet mêlant algorithmie, mathématiques, optimisation et création procédurale.",
         media: [
             { type: "image", src: "../Image/cylindre.png" },
-            { type: "gif", src: "../Video/cylindreGIF.mp4" },
+            { type: "gif", src: "../Video/CylindreGIF.mp4" },
         ],
         github: "https://github.com/Bonus012/MiniJeu3jours",
     },
@@ -121,7 +121,7 @@ const PROJECTS = [
         description: "Ce projet réalisé avec SFML consistait à développer un petit jeu en 2D reposant sur une gestion précise des tiles et de l’environnement. J’ai pris en charge la mise en place du système de tuiles, ainsi que les mécaniques de creusage, de coupe d’arbres et de minage. Puis pour finir, j'ai travaillé sur les animaux et leur IA, ce qui a permis de donner vie au monde et d’enrichir l’expérience de jeu.",
         media: [
             { type: "image", src: "../Image/Lostinpalm.png" },
-            { type: "gif", src: "../Video/VideoJeu1LostInPalmGIF.mp4" },
+            { type: "gif", src: "../Video/videojeu1lostinpalmGIF.mp4" },
         ],
         youtube: "https://youtu.be/I9j3Uwnz9vc",
     },
