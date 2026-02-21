@@ -110,7 +110,7 @@ const PROJECTS = [
         description: "Shooter réalisé à trois, entièrement en C++ avec SFML. Assets faits maison. Je me suis occupé des collisions, du combat, du système de vie, du boss, des crédits et de la DA.",
         media: [
             { type: "image", src: "../Image/Spacefishshooter.png" },
-            { type: "gif", src: "../Video/video-shootthemupGIF.mp4" },
+            { type: "gif", src: "../Video/videoshootthemupGIF.mp4" },
         ],
         youtube: "https://youtu.be/Dzm9YcMz0ZI",
     },
