@@ -245,10 +245,10 @@ function injectLangButtons() {
     switcher.id = 'langSwitcher';
     switcher.innerHTML = `
         <button class="lang-btn ${currentLang === 'fr' ? 'active' : ''}" data-lang="fr" title="Français">
-            <img src="/SiteWeb/Image/france.png" alt="FR" />
+            <img src="/SiteWeb/Image/flag-fr.png" alt="FR" />
         </button>
         <button class="lang-btn ${currentLang === 'en' ? 'active' : ''}" data-lang="en" title="English">
-            <img src="/SiteWeb/Image/USA.png" alt="EN" />
+            <img src="/SiteWeb/Image/flag-en.png" alt="EN" />
         </button>
     `;
     switcher.querySelectorAll('.lang-btn').forEach(btn => {
