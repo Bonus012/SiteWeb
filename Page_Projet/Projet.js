@@ -11,7 +11,7 @@ const PROJECTS = [
             { type: "image", src: "../Image/PokemonMinia.png" },
             { type: "video", src: "../Video/videoPokemon.mp4" },
         ],
-        github: "https://github.com/Bonus012/Pokemon-Console-Cs", cahier: "../Pdf/CDC_Bases_du_Cs_1.pdf",
+        github: "https://github.com/Bonus012/Pokemon-Console-Cs", cahier: "../Pdf/CDC_Bases_du_Cs_1.pdf", youtube : "https://roblox.fr"
     },
     //P2
     {
@@ -128,13 +128,13 @@ const PROJECTS = [
 ];
 
 const TAG_META = {
-    unity:  { label: "Unity",         cls: "ptag-unity"  },
-    unreal: { label: "Unreal Engine",  cls: "ptag-unreal" },
-    cpp:    { label: "C++",            cls: "ptag-cpp"    },
-    cs:     { label: "C#",             cls: "ptag-cs"     },
-    "1sem": { label: "1 Semaine",         cls: "ptag-1sem" },
-    "2sem":  { label: "2 Semaines",          cls: "ptag-2sem"  },
-    solo: { label: "Solo",         cls: "ptag-solo" },
+    unity: { label: "Unity", cls: "ptag-unity" },
+    unreal: { label: "Unreal Engine", cls: "ptag-unreal" },
+    cpp: { label: "C++", cls: "ptag-cpp" },
+    cs: { label: "C#", cls: "ptag-cs" },
+    "1sem": { label: "1 Semaine", cls: "ptag-1sem" },
+    "2sem": { label: "2 Semaines", cls: "ptag-2sem" },
+    solo: { label: "Solo", cls: "ptag-solo" },
 };
 
 function makeTags(tags) {
@@ -145,7 +145,7 @@ function makeTags(tags) {
 }
 
 /* ── BUILD CARDS ── */
-const grid  = document.getElementById("projectsGrid");
+const grid = document.getElementById("projectsGrid");
 const noRes = document.getElementById("noResults");
 
 PROJECTS.forEach((p, i) => {
@@ -201,9 +201,9 @@ function expandCard(card, idx) {
 
     const el = document.createElement("div");
     el.className = "expanded-card";
-    el.style.top    = rect.top    + "px";
-    el.style.left   = rect.left   + "px";
-    el.style.width  = rect.width  + "px";
+    el.style.top = rect.top + "px";
+    el.style.left = rect.left + "px";
+    el.style.width = rect.width + "px";
     el.style.height = rect.height + "px";
 
     el.innerHTML = `
@@ -211,11 +211,11 @@ function expandCard(card, idx) {
         <div class="exp-content">
             <div class="exp-media">
                 ${p.media.map(m => {
-                    if (m.type === "image")   return `<img src="${m.src}" alt="${p.name}" loading="lazy"/>`;
-                    if (m.type === "video")   return `<video src="${m.src}" controls></video>`;
-                    if (m.type === "youtube") return `<iframe src="${m.src}" title="YouTube" frameborder="0" allowfullscreen></iframe>`;
-                    return "";
-                }).join("")}
+        if (m.type === "image") return `<img src="${m.src}" alt="${p.name}" loading="lazy"/>`;
+        if (m.type === "video") return `<video src="${m.src}" controls></video>`;
+        if (m.type === "youtube") return `<iframe src="${m.src}" title="YouTube" frameborder="0" allowfullscreen></iframe>`;
+        return "";
+    }).join("")}
             </div>
             <div class="exp-info">
                 <div class="exp-header">
@@ -229,6 +229,9 @@ function expandCard(card, idx) {
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
                         GitHub</a>` : ""}
                     ${p.itch ? `<a href="${p.itch}" class="btn btn-ghost btn-itch" target="_blank">🎮 Tester sur itch.io</a>` : ""}
+                    ${p.youtube ? `<a href="${p.youtube}" class="btn btn-ghost btn-yt" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        Voir gameplay complet</a>` : ""}
                 </div>
             </div>
         </div>`;
@@ -247,16 +250,16 @@ function expandCard(card, idx) {
 
             const vw = window.innerWidth;
             const vh = window.innerHeight;
-            const padding  = vw < 600 ? 12 : 32;
-            const targetW  = Math.min(900, vw - padding * 2);
-            const targetH  = Math.min(vh - padding * 2, vw < 600 ? vh * 0.9 : 720);
-            const targetL  = (vw - targetW) / 2;
-            const targetT  = (vh - targetH) / 2;
+            const padding = vw < 600 ? 12 : 32;
+            const targetW = Math.min(900, vw - padding * 2);
+            const targetH = Math.min(vh - padding * 2, vw < 600 ? vh * 0.9 : 720);
+            const targetL = (vw - targetW) / 2;
+            const targetT = (vh - targetH) / 2;
 
-            el.style.top          = targetT + "px";
-            el.style.left         = targetL + "px";
-            el.style.width        = targetW + "px";
-            el.style.height       = targetH + "px";
+            el.style.top = targetT + "px";
+            el.style.left = targetL + "px";
+            el.style.width = targetW + "px";
+            el.style.height = targetH + "px";
             el.style.borderRadius = "24px";
 
             setTimeout(() => el.classList.add("show-content"), 420);
@@ -270,7 +273,7 @@ function expandCard(card, idx) {
 function collapseCard() {
     if (!expandedEl || !originCard) return;
 
-    const el   = expandedEl;
+    const el = expandedEl;
     const card = originCard;
 
     el.classList.remove("show-content");
@@ -280,12 +283,12 @@ function collapseCard() {
         el.classList.remove("animating");
         el.classList.add("closing");
 
-        el.style.top          = rect.top    + "px";
-        el.style.left         = rect.left   + "px";
-        el.style.width        = rect.width  + "px";
-        el.style.height       = rect.height + "px";
+        el.style.top = rect.top + "px";
+        el.style.left = rect.left + "px";
+        el.style.width = rect.width + "px";
+        el.style.height = rect.height + "px";
         el.style.borderRadius = "18px";
-        el.style.opacity      = "0";
+        el.style.opacity = "0";
 
         setTimeout(() => {
             el.remove();
@@ -311,20 +314,20 @@ document.getElementById("navToggle").addEventListener("click", () => {
 
 /* ── PARTICLES ── */
 (function () {
-    const c   = document.getElementById("particles");
+    const c = document.getElementById("particles");
     const ctx = c.getContext("2d");
     let W, H;
     const pts = Array.from({ length: 90 }, () => ({
-        x:  Math.random() * window.innerWidth,
-        y:  Math.random() * window.innerHeight,
-        r:  Math.random() * 1.4 + .3,
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        r: Math.random() * 1.4 + .3,
         dx: (Math.random() - .5) * .28,
         dy: (Math.random() - .5) * .28,
-        a:  Math.random() * .55 + .1,
+        a: Math.random() * .55 + .1,
     }));
 
     function resize() {
-        W = c.width  = window.innerWidth;
+        W = c.width = window.innerWidth;
         H = c.height = window.innerHeight;
     }
     resize();
