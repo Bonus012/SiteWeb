@@ -112,7 +112,7 @@ const PROJECTS = [
             { type: "image", src: "../Image/Spacefishshooter.png" },
             { type: "gif", src: "../Video/video-shootthemupGIF.mp4" },
         ],
-        github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_Shader_7.pdf",
+        youtube: "https://youtu.be/Dzm9YcMz0ZI",
     },
     //P11
     {
@@ -123,7 +123,7 @@ const PROJECTS = [
             { type: "image", src: "../Image/Lostinpalm.png" },
             { type: "gif", src: "../Video/VideoJeu1LostInPalmGIF.mp4" },
         ],
-        github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_Shader_7.pdf",
+        youtube: "https://youtu.be/I9j3Uwnz9vc",
     },
 ];
 
