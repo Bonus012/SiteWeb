@@ -190,10 +190,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     const EVENTS = [
         { year: "2016", title: "Premiers Scripts",  sub: "Le début de tout",  desc: "Découverte du code via scratch, réalisation d'un tas de petits jeux.", t: 0.07 },
-        { year: "2022", title: "BAC",       sub: "STI2D",              desc: "Options Energie et Environnement, Lycée Pierre Termier a Grenoble",        t: 0.24 },
+        { year: "2022", title: "BAC",       sub: "STI2D",              desc: "Options Energie et Environnement, Lycée Pierre Termier à Grenoble",        t: 0.24 },
         { year: "2023", title: "Gaming Campus",   sub: "Lyon",           desc: "Entrée au Gaming Campus, je découvre le code en profondeur",    t: 0.42 },
-        { year: "2024 - 2025", title: "Apprentissage",   sub: "C++ / C#",              desc: "J'acquis beaucoup de compêtence dans différents domaines",         t: 0.60 },
-        { year: "2026", title: "3ème Année",  sub: "Unity",     desc: "Unity Avancée, Système proceduraux, Système modulaires, j'ai acquis de très bonne base en  programmation",           t: 0.78 },
+        { year: "2024 - 2025", title: "Apprentissage",   sub: "C++ / C#",              desc: "J'acquiers beaucoup de compêtences dans différents domaines",         t: 0.60 },
+        { year: "2026", title: "3ème Année",  sub: "Unity",     desc: "Unity Avancée, Systèmes proceduraux, Systèmes modulaires, j'ai acquis de très bonnes bases en  programmation",           t: 0.78 },
         { year: "Actuellement", title: "Recherche Stage",    sub: "Prêt pour l'industrie",   desc: "Portfolio complet, A la recherche d'une première expérience pro.", t: 0.93 }
     ];
 
