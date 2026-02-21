@@ -58,7 +58,7 @@ const PROJECTS = [
             { type: "video", src: "../Video/TheHundrethAscentDemo.mp4" },
             { type: "image", src: "../Image/ProjMultiLocal_2.png" },
         ],
-        github: "https://github.com/Bonus012/Projet_3C_The_Hundreth_Ascend", cahier: "../Pdf/CDC_3C_5.pdf",
+        github: "https://github.com/Bonus012/Projet_3C_The_Hundreth_Ascend", cahier: "../Pdf/CDC_3C_5.pdf", youtube: "https://youtu.be/aOJ-Ss5vgA0"
     },
     //P6
     {
