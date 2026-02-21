@@ -33,7 +33,7 @@ const PROJECTS = [
             { type: "image", src: "../Image/Switchbound.png" },
             { type: "gif", src: "../Video/SwitchboundGIF.mp4" },
         ],
-        github: "https://github.com/Bonus012/Switchbound_Unreal", cahier: "../Pdf/CDC_BlueprintsCpp.pdf",
+        github: "https://github.com/Bonus012/Switchbound_Unreal", cahier: "../Pdf/CDC_BlueprintsCpp.pdf", youtube: "https://youtu.be/HYMIHXcsBx8"
     },
     //P4
     {
@@ -46,7 +46,7 @@ const PROJECTS = [
             { type: "image", src: "../Image/GenPro_2.png" },
             { type: "image", src: "../Image/GenPro_3.png" },
         ],
-        github: "https://github.com/Bonus012/Generation_Procedural", itch: null, cahier: "../Pdf/CDC_Génération_Procedurale_4.pdf",
+        github: "https://github.com/Bonus012/Generation_Procedural", itch: null, cahier: "../Pdf/CDC_Génération_Procedurale_4.pdf", youtube: "https://youtu.be/Xd8QVbwEI64"
     },
     //P5
     {
@@ -71,7 +71,7 @@ const PROJECTS = [
             { type: "image", src: "../Image/MafiaWar_2.png" },
             { type: "image", src: "../Image/MafiaWar_3.png" },
         ],
-        github: "https://github.com/Bonus012/Projet_UI-UX_MafiaWar", cahier: "../Pdf/CDC_UI_UX 6.pdf",
+        github: "https://github.com/Bonus012/Projet_UI-UX_MafiaWar", cahier: "../Pdf/CDC_UI_UX 6.pdf", youtube: "https://youtu.be/TIXvuEBVxH4"
     },
     //P7
     {
@@ -82,7 +82,7 @@ const PROJECTS = [
             { type: "image", src: "../Image/Shader.png" },
             { type: "gif", src: "../Video/ShaderGIF.mp4" },
         ],
-        github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_Shader_7.pdf",
+        github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_Shader_7.pdf", youtube: "https://youtu.be/WvyUmPnesEA"
     },
     //P8
     {
