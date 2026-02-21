@@ -11,7 +11,7 @@ const PROJECTS = [
             { type: "image", src: "../Image/PokemonMinia.png" },
             { type: "video", src: "../Video/videoPokemon.mp4" },
         ],
-        github: "https://github.com/Bonus012/Pokemon-Console-Cs", cahier: "../Pdf/CDC_Bases_du_Cs_1.pdf", youtube : "https://roblox.fr"
+        github: "https://github.com/Bonus012/Pokemon-Console-Cs", cahier: "../Pdf/CDC_Bases_du_Cs_1.pdf",
     },
     //P2
     {
@@ -31,7 +31,7 @@ const PROJECTS = [
         description: "Jeu solo mêlant escape game et aventure, reposant sur un système de changement de personnage instantané, avec un gameplay asymétrique (robot agile et furtif / robot lourd orienté force brute et vitesse), incluant la conception et l’intégration de l’architecture de gameplay, des interactions, des compétences, des transitions entre personnages, ainsi que le développement de la logique C++ et Blueprints pour un système fluide et modulaire",
         media: [
             { type: "image", src: "../Image/Switchbound.png" },
-            { type: "video", src: "../Video/Switchbound.mp4" },
+            { type: "gif", src: "../Video/SwitchboundGIF.mp4" },
         ],
         github: "https://github.com/Bonus012/Switchbound_Unreal", cahier: "../Pdf/CDC_BlueprintsCpp.pdf",
     },
@@ -42,9 +42,9 @@ const PROJECTS = [
         description: "Ce projet, développé en une semaine, consistait à créer un jeu procédural capable de générer un monde dynamique et renouvelé à chaque partie. Je me suis chargé de toute la partie technique liée à la génération procédurale : création du terrain, gestion des chunks, système de creusage et de placement de blocs, ainsi que l’optimisation de ces mécaniques pour garantir une expérience fluide. De son côté, mon coéquipier a développé les ennemis, l’inventaire et le système de combat, ce qui nous a permis de construire un prototype complet mêlant exploration, action et construction.",
         media: [
             { type: "image", src: "../Image/GenPro_1.png" },
+            { type: "gif", src: "../Video/Jeu_StrangerariaGIF.mp4" },
             { type: "image", src: "../Image/GenPro_2.png" },
             { type: "image", src: "../Image/GenPro_3.png" },
-            { type: "video", src: "../Video/Jeu_Strangeraria.mp4" }
         ],
         github: "https://github.com/Bonus012/Generation_Procedural", itch: null, cahier: "../Pdf/CDC_Génération_Procedurale_4.pdf",
     },
@@ -67,7 +67,7 @@ const PROJECTS = [
         description: "Il s’agit d’un jeu entièrement réalisé en UI sur Unity, inspiré d’Age of War et de Plants vs Zombies. L’objectif était de recréer un gameplay stratégique basé sur la gestion de lignes, les unités et la progression, mais sans utiliser de sprites ou de scènes 2D classiques : tout est construit en interface. Ce choix nous a permis d’explorer une approche différente du game design, centrée sur la lisibilité, la modularité et la réactivité de l’UI.",
         media: [
             { type: "image", src: "../Image/MafiaWar_1.png" },
-            { type: "video", src: "../Video/MafiaWar.mp4" },
+            { type: "gif", src: "../Video/MafiaWarGIF.mp4" },
             { type: "image", src: "../Image/MafiaWar_2.png" },
             { type: "image", src: "../Image/MafiaWar_3.png" },
         ],
@@ -80,7 +80,7 @@ const PROJECTS = [
         description: "Il s’agit d’un petit jeu conçu pour mettre en valeur les shaders Unity et approfondir la maîtrise de Shader Graph. L’objectif était d’expérimenter différents effets visuels, de comprendre leur fonctionnement interne et d’apprendre à créer des matériaux dynamiques et stylisés. Ce projet nous a permis d’explorer la logique des graphes, d’optimiser les rendus et de mieux comprendre le pipeline visuel d’Unity.",
         media: [
             { type: "image", src: "../Image/Shader.png" },
-            { type: "video", src: "../Video/Shader.mp4" },
+            { type: "gif", src: "../Video/ShaderGIF.mp4" },
         ],
         github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_Shader_7.pdf",
     },
@@ -91,7 +91,7 @@ const PROJECTS = [
         description: "Objectif du projet : me challenger en développant un jeu où tous les modèles 3D sont générés par script, accompagnés d’une physique entièrement codée à la main. Un exercice complet mêlant algorithmie, mathématiques, optimisation et création procédurale.",
         media: [
             { type: "image", src: "../Image/cylindre.png" },
-            { type: "video", src: "../Video/cylindre.mp4" },
+            { type: "gif", src: "../Video/cylindreGIF.mp4" },
         ],
         github: "https://github.com/Bonus012/MiniJeu3jours",
     },
@@ -110,7 +110,7 @@ const PROJECTS = [
         description: "Shooter réalisé à trois, entièrement en C++ avec SFML. Assets faits maison. Je me suis occupé des collisions, du combat, du système de vie, du boss, des crédits et de la DA.",
         media: [
             { type: "image", src: "../Image/Spacefishshooter.png" },
-            { type: "video", src: "../Video/Video_ShootThemUp.mp4" },
+            { type: "gif", src: "../Video/video-shootthemupGIF.mp4" },
         ],
         github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_Shader_7.pdf",
     },
@@ -121,7 +121,7 @@ const PROJECTS = [
         description: "Ce projet réalisé avec SFML consistait à développer un petit jeu en 2D reposant sur une gestion précise des tiles et de l’environnement. J’ai pris en charge la mise en place du système de tuiles, ainsi que les mécaniques de creusage, de coupe d’arbres et de minage. Puis pour finir, j'ai travaillé sur les animaux et leur IA, ce qui a permis de donner vie au monde et d’enrichir l’expérience de jeu.",
         media: [
             { type: "image", src: "../Image/Lostinpalm.png" },
-            { type: "video", src: "../Video/VideoJeu1LostInPalm.mp4" },
+            { type: "gif", src: "../Video/VideoJeu1LostInPalmGIF.mp4" },
         ],
         github: "https://github.com/Bonus012/Projet_Shader", cahier: "../Pdf/CDC_Shader_7.pdf",
     },
@@ -213,6 +213,7 @@ function expandCard(card, idx) {
                 ${p.media.map(m => {
         if (m.type === "image") return `<img src="${m.src}" alt="${p.name}" loading="lazy"/>`;
         if (m.type === "video") return `<video src="${m.src}" controls></video>`;
+        if (m.type === "gif") return `<video src="${m.src}" autoplay loop muted playsinline></video>`;
         if (m.type === "youtube") return `<iframe src="${m.src}" title="YouTube" frameborder="0" allowfullscreen></iframe>`;
         return "";
     }).join("")}

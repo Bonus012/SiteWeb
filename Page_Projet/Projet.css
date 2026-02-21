@@ -557,6 +557,17 @@ body.modal-open .project-card:not(.is-expanded) {
         color: var(--text);
     }
 
+.btn-yt {
+    border-color: rgba(255,0,0,.45);
+    color: #ff4444;
+}
+
+    .btn-yt:hover {
+        background: rgba(255,0,0,.12);
+        border-color: #ff0000;
+        color: var(--text);
+    }
+
 /* ── FOOTER ── */
 .main-footer {
     background: #111;
