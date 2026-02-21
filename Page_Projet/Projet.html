@@ -6,7 +6,7 @@
     <title>Projets - Elouan Bouché</title>
     <link rel="stylesheet" href="Projet.css" />
 </head>
-<body>
+<body data-page-title="proj_page_title">
 
     <canvas id="particles"></canvas>
 
@@ -14,9 +14,9 @@
     <header class="main-header">
         <nav class="nav">
             <ul class="nav__links" id="navLinks">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="Projet.html" class="active">Projets</a></li>
-                <li><a href="../Page_Contact/Contact.html">Contact</a></li>
+                <li><a href="../index.html" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="Projet.html" class="active" data-i18n="nav_projects">Projets</a></li>
+                <li><a href="../Page_Contact/Contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <button class="nav__toggle" id="navToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -26,34 +26,34 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero">
-        <h1>Mes <span>Projets</span></h1>
-        <p>Une sélection de mes réalisations en développement de jeux et logiciels.</p>
+        <h1><span data-i18n="proj_hero_title">Mes</span> <span data-i18n="proj_hero_title_span">Projets</span></h1>
+        <p data-i18n="proj_hero_sub">Une sélection de mes réalisations en développement de jeux et logiciels.</p>
     </section>
 
     <!-- FILTERS -->
     <section class="filter-section">
         <div class="filter-wrapper" id="filterWrapper">
-            <button class="filter-btn active" data-tag="all">Tous</button>
+            <button class="filter-btn active" data-tag="all" data-i18n="filter_all">Tous</button>
             <button class="filter-btn" data-tag="unity">Unity</button>
             <button class="filter-btn" data-tag="unreal">Unreal Engine</button>
             <button class="filter-btn" data-tag="cpp">C++</button>
             <button class="filter-btn" data-tag="cs">C#</button>
-            <button class="filter-btn" data-tag="1sem">1 Semaine</button>
-            <button class="filter-btn" data-tag="2sem">2 Semaines</button>
-            <button class="filter-btn" data-tag="solo">Solo</button>
+            <button class="filter-btn" data-tag="1sem" data-i18n="filter_1sem">1 Semaine</button>
+            <button class="filter-btn" data-tag="2sem" data-i18n="filter_2sem">2 Semaines</button>
+            <button class="filter-btn" data-tag="solo" data-i18n="filter_solo">Solo</button>
         </div>
     </section>
 
     <!-- GRID -->
     <main class="projects-section">
         <div class="projects-grid" id="projectsGrid"></div>
-        <p class="no-results" id="noResults">Aucun projet pour ce filtre.</p>
+        <p class="no-results" id="noResults" data-i18n="no_results">Aucun projet pour ce filtre.</p>
     </main>
 
     <!-- FOOTER -->
     <footer id="contact" class="main-footer">
         <div class="footer-content">
-            <p class="footer-name">© 2025 — Elouan Bouché</p>
+            <p class="footer-name" data-i18n="footer_copy">© 2025 — Elouan Bouché</p>
             <p class="footer-mail">
                 <a href="mailto:elouan.bouche@gmail.com">elouan.bouche@gmail.com</a>
             </p>
@@ -65,6 +65,7 @@
         </div>
     </footer>
 
+    <script src="../Page_Main/lang.js"></script>
     <script src="Projet.js"></script>
 </body>
 </html>

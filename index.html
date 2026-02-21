@@ -16,9 +16,9 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav__links">
-                <li><a href="#journey">Parcours</a></li>
-                <li><a href="Page_Projet/Projet.html">Projets</a></li>
-                <li><a href="Page_Contact/Contact.html">Contact</a></li>
+                <li><a href="#journey" data-i18n="nav_journey">Parcours</a></li>
+                <li><a href="Page_Projet/Projet.html" data-i18n="nav_projects">Projets</a></li>
+                <li><a href="Page_Contact/Contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -33,19 +33,19 @@
                     <span class="hero__tag tag-cs">C#</span>
                     <span class="hero__tag tag-python">Python</span>
                 </div>
-                <p class="hero__text">
+                <p class="hero__text" data-i18n="hero_desc">
                     Spécialisé en C#, Unity et systèmes procéduraux, je crée des jeux et des projets toujours plus ambitieux.
                 </p>
                 <div class="hero__actions">
-                    <a href="Page_Projet/Projet.html" class="btn btn--primary">Voir mes projets</a>
-                    <a href="Pdf/CV_Elouan_19-02.pdf" class="btn btn--primary">Mon CV</a>
-                    <a href="Page_Contact/Contact.html" class="btn btn--ghost">Me contacter</a>
+                    <a href="Page_Projet/Projet.html" class="btn btn--primary" data-i18n="hero_btn_projects">Voir mes projets</a>
+                    <a href="Pdf/CV_Elouan_19-02.pdf" class="btn btn--primary" data-i18n="hero_btn_cv">Mon CV</a>
+                    <a href="Page_Contact/Contact.html" class="btn btn--ghost" data-i18n="hero_btn_contact">Me contacter</a>
                 </div>
             </div>
             <div class="hero__visual">
                 <div class="hero__card">
                     <img src="Image/PP.jpg" alt="Elouan Bouché" class="hero__card-photo" />
-                    <span>Recherche un stage</span>
+                    <span data-i18n="hero_seeking">Recherche un stage</span>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
         <div class="about-inner">
             <div class="about-extra">
                 <div class="extra-card">
-                    <h2>Mes Outils</h2>
+                    <h2 data-i18n="section_tools">Mes Outils</h2>
                     <div class="tools-grid">
                         <div class="tool-item"><img src="Image/Unity.webp" alt="Unity"><span>Unity</span></div>
                         <div class="tool-item"><img src="Image/Unreal_Engine-Logo.png" alt="UE"><span>Unreal Engine</span></div>
@@ -67,15 +67,15 @@
                     </div>
                 </div>
                 <div class="extra-card">
-                    <h2>Mes Expériences</h2>
+                    <h2 data-i18n="section_xp">Mes Expériences</h2>
                     <div class="experience-list">
                         <a href="https://www.coursier.fr/" target="_blank" class="experience-item">
                             <img src="Image/logo-coursier.webp" alt="Coursier.fr">
-                            <span>Coursier.fr — Livreur</span>
+                            <span data-i18n="xp_coursier">Coursier.fr — Livreur</span>
                         </a>
                         <a href="https://www.raffin.com/" target="_blank" class="experience-item">
                             <img src="Image/henriraffin.webp" alt="Henri Raffin">
-                            <span>Henri Raffin - Embossage</span>
+                            <span data-i18n="xp_raffin">Henri Raffin - Embossage</span>
                         </a>
                     </div>
                 </div>
@@ -87,8 +87,8 @@
     <section id="journey" class="journey-wrapper">
         <div class="glow-orb glow-orb-1"></div>
         <div class="glow-orb glow-orb-2"></div>
-        <h2 class="journey-title">Mon Parcours</h2>
-        <p class="journey-eyebrow">Une trajectoire en constante évolution</p>
+        <h2 class="journey-title" data-i18n="journey_title">Mon Parcours</h2>
+        <p class="journey-eyebrow" data-i18n="journey_eyebrow">Une trajectoire en constante évolution</p>
 
         <div class="sine-container">
             <canvas id="sineCanvas"></canvas>
@@ -98,7 +98,7 @@
 
     <!-- PROJECTS — carrousel -->
     <section id="projects" class="projects-wrapper">
-        <h2 class="projects-title">Quelques Projets</h2>
+        <h2 class="projects-title" data-i18n="projects_title">Quelques Projets</h2>
 
         <div class="carousel">
             <div class="carousel-track">
@@ -109,13 +109,13 @@
                         <video src="Video/Jeu_StrangerariaGIF.mp4" autoplay muted loop playsinline class="carousel-video"></video>
                     </div>
                     <div class="carousel-right">
-                        <h3>Strangeraria</h3>
-                        <p>Ce projet, développé en une semaine, consistait à créer un jeu procédural capable de générer un monde dynamique et renouvelé à chaque partie.</p>
+                        <h3 data-i18n="slide1_title">Strangeraria</h3>
+                        <p data-i18n="slide1_desc">Ce projet, développé en une semaine, consistait à créer un jeu procédural capable de générer un monde dynamique et renouvelé à chaque partie.</p>
                         <div class="carousel-actions">
-                            <a href="Page_Projet/Projet.html" class="btn btn--primary">Voir tous les projets</a>
+                            <a href="Page_Projet/Projet.html" class="btn btn--primary" data-i18n="carousel_see_all">Voir tous les projets</a>
                             <a href="https://github.com/Bonus012/Generation_Procedural" target="_blank" class="btn btn--ghost">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
-                                Voir sur GitHub
+                                <span data-i18n="carousel_github">Voir sur GitHub</span>
                             </a>
                         </div>
                     </div>
@@ -127,13 +127,13 @@
                         <video src="Video/videoshootthemupGIF.mp4" autoplay muted loop playsinline class="carousel-video"></video>
                     </div>
                     <div class="carousel-right">
-                        <h3>SpacefishShooter</h3>
-                        <p>Shooter réalisé à trois, entièrement en C++ avec SFML. Assets faits maison. Je me suis occupé des collisions, du combat, du système de vie, du boss, des crédits et de la DA.</p>
+                        <h3 data-i18n="slide2_title">SpacefishShooter</h3>
+                        <p data-i18n="slide2_desc">Shooter réalisé à trois, entièrement en C++ avec SFML. Assets faits maison. Je me suis occupé des collisions, du combat, du système de vie, du boss, des crédits et de la DA.</p>
                         <div class="carousel-actions">
-                            <a href="Page_Projet/Projet.html" class="btn btn--primary">Voir tous les projets</a>
+                            <a href="Page_Projet/Projet.html" class="btn btn--primary" data-i18n="carousel_see_all">Voir tous les projets</a>
                             <a href="https://github.com/TonGitHub" target="_blank" class="btn btn--ghost">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
-                                Voir sur GitHub
+                                <span data-i18n="carousel_github">Voir sur GitHub</span>
                             </a>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
     <!-- FOOTER -->
     <footer id="contact" class="main-footer">
         <div class="footer-content">
-            <p class="footer-name">© 2025 — Elouan Bouché</p>
+            <p class="footer-name" data-i18n="footer_copy">© 2025 — Elouan Bouché</p>
             <p class="footer-mail">
                 <a href="mailto:elouan.bouche@gmail.com">elouan.bouche@gmail.com</a>
             </p>
@@ -164,6 +164,7 @@
         </div>
     </footer>
 
+    <script src="Page_Main/lang.js"></script>
     <script src="Page_Main/script.js"></script>
 </body>
 </html>

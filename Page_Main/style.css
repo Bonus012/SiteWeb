@@ -343,6 +343,7 @@ html {
         transform: translateX(0);
     }
 }
+
 .hero__card-photo {
     position: absolute;
     inset: 0;
@@ -1013,6 +1014,52 @@ html {
 /* ===========================
    RESPONSIVE
 =========================== */
+/* ── LANG SWITCHER ── */
+#langSwitcher {
+    display: flex;
+    gap: .4rem;
+    align-items: center;
+    position: absolute;
+    left: 0;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 2px;
+    cursor: pointer;
+    opacity: .5;
+    transition: opacity .2s, border-color .2s, transform .2s;
+    line-height: 0;
+}
+
+    .lang-btn img {
+        width: 28px;
+        height: 20px;
+        object-fit: cover;
+        border-radius: 3px;
+        display: block;
+    }
+
+    .lang-btn:hover {
+        opacity: .85;
+        transform: scale(1.08);
+    }
+
+    .lang-btn.active {
+        opacity: 1;
+        border-color: var(--accent);
+    }
+
+@media (max-width: 768px) {
+    #langSwitcher {
+        position: absolute;
+        left: 0;
+        right: auto;
+    }
+}
+
 @media (max-width: 768px) {
     .nav {
         justify-content: flex-end;

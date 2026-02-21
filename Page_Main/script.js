@@ -188,14 +188,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     const layer = document.getElementById('tlLayer');
 
-    const EVENTS = [
-        { year: "2016", title: "Premiers Scripts",  sub: "Le début de tout",  desc: "Découverte du code via scratch, réalisation d'un tas de petits jeux.", t: 0.07 },
-        { year: "2022", title: "BAC",       sub: "STI2D",              desc: "Options Energie et Environnement, Lycée Pierre Termier à Grenoble",        t: 0.24 },
-        { year: "2023", title: "Gaming Campus",   sub: "Lyon",           desc: "Entrée au Gaming Campus, je découvre le code en profondeur",    t: 0.42 },
-        { year: "2024 - 2025", title: "Apprentissage",   sub: "C++ / C#",              desc: "J'acquiers beaucoup de compêtences dans différents domaines",         t: 0.60 },
-        { year: "2026", title: "3ème Année",  sub: "Unity",     desc: "Unity Avancée, Systèmes proceduraux, Systèmes modulaires, j'ai acquis de très bonnes bases en  programmation",           t: 0.78 },
-        { year: "Actuellement", title: "Recherche Stage",    sub: "Prêt pour l'industrie",   desc: "Portfolio complet, A la recherche d'une première expérience pro.", t: 0.93 }
-    ];
+    function getEvents() {
+        const tFn = typeof t === "function" ? t : (k) => k;
+        return [
+            { year: "2016", title: tFn("tl_0_title"), sub: tFn("tl_0_sub"), desc: tFn("tl_0_desc"), t: 0.07 },
+            { year: "2022", title: tFn("tl_1_title"), sub: tFn("tl_1_sub"), desc: tFn("tl_1_desc"), t: 0.24 },
+            { year: "2023", title: tFn("tl_2_title"), sub: tFn("tl_2_sub"), desc: tFn("tl_2_desc"), t: 0.42 },
+            { year: "2024 - 2025", title: tFn("tl_3_title"), sub: tFn("tl_3_sub"), desc: tFn("tl_3_desc"), t: 0.60 },
+            { year: "2026", title: tFn("tl_4_title"), sub: tFn("tl_4_sub"), desc: tFn("tl_4_desc"), t: 0.78 },
+            { year: "2026+", title: tFn("tl_5_title"), sub: tFn("tl_5_sub"), desc: tFn("tl_5_desc"), t: 0.93 },
+        ];
+    }
+    let EVENTS = getEvents();
 
     // WAVE
     function waveNorm(xNorm, phase) {
@@ -212,13 +216,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     const CARD_W = 195;
     const CARD_H = 150;
-    const GAP    = 28;
+    const GAP = 28;
 
     // ââ STATIC LAYOUT â cards fixed at phase=0
     // All "above" cards share the SAME top Y; all "below" share the SAME bottom Y
     function computeStaticPositions() {
         const midY = H * 0.5;
-        const amp  = H * 0.28;
+        const amp = H * 0.28;
 
         // Find the unified row Y for above and below cards
         // Above cards: bottom edge = min(dotY at phase=0) - GAP  â push all to same TOP
@@ -239,15 +243,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const belowRowTop = Math.min(H - CARD_H - 4, belowWaveMax + GAP);
 
         return EVENTS.map((ev, i) => {
-            const x     = ev.t * W;
-            const dotY  = dotYs[i];
+            const x = ev.t * W;
+            const dotY = dotYs[i];
             const above = i % 2 === 0;
 
             let cx = x - CARD_W / 2;
             cx = Math.max(2, Math.min(W - CARD_W - 2, cx));
 
-            const cy            = above ? aboveRowTop : belowRowTop;
-            const connAnchorY   = above ? cy + CARD_H : cy;   // card edge facing the wave
+            const cy = above ? aboveRowTop : belowRowTop;
+            const connAnchorY = above ? cy + CARD_H : cy;   // card edge facing the wave
 
             return { x, dotY, above, cx, cy, connAnchorY };
         });
@@ -286,7 +290,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const positions = computeStaticPositions();
         positions.forEach((p, i) => {
             elCards[i].style.left = p.cx + 'px';
-            elCards[i].style.top  = p.cy + 'px';
+            elCards[i].style.top = p.cy + 'px';
         });
 
         // Staggered reveal
@@ -311,22 +315,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     // UPDATE ANIMATED (dots + elastic connectors only)
     function updateAnimated(ph) {
         const midY = H * 0.5;
-        const amp  = H * 0.28;
+        const amp = H * 0.28;
         const positions = computeStaticPositions();
 
         EVENTS.forEach((ev, i) => {
-            const x    = ev.t * W;
+            const x = ev.t * W;
             const dotY = midY + waveNorm(ev.t, ph) * amp;
-            const p    = positions[i];
+            const p = positions[i];
 
             elDots[i].style.left = x + 'px';
-            elDots[i].style.top  = dotY + 'px';
+            elDots[i].style.top = dotY + 'px';
 
-            const connTop  = Math.min(dotY, p.connAnchorY);
-            const connH    = Math.max(0, Math.abs(dotY - p.connAnchorY));
+            const connTop = Math.min(dotY, p.connAnchorY);
+            const connH = Math.max(0, Math.abs(dotY - p.connAnchorY));
 
-            elConns[i].style.left   = x + 'px';
-            elConns[i].style.top    = connTop + 'px';
+            elConns[i].style.left = x + 'px';
+            elConns[i].style.top = connTop + 'px';
             elConns[i].style.height = connH + 'px';
             elConns[i].style.background = p.above
                 ? 'linear-gradient(180deg, rgba(168,85,247,0.15), rgba(91,140,255,0.65))'
@@ -340,25 +344,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         ctx2.clearRect(0, 0, W, H);
 
         const midY = H * 0.5;
-        const amp  = H * 0.28;
+        const amp = H * 0.28;
         const STEPS = 500;
 
         const grad = ctx2.createLinearGradient(0, 0, W, 0);
-        grad.addColorStop(0,   '#5b8cff');
+        grad.addColorStop(0, '#5b8cff');
         grad.addColorStop(0.5, '#a855f7');
-        grad.addColorStop(1,   '#5b8cff');
+        grad.addColorStop(1, '#5b8cff');
 
         // Glow halos
         for (let g = 4; g >= 1; g--) {
             ctx2.beginPath();
             for (let s = 0; s <= STEPS; s++) {
                 const xn = s / STEPS;
-                const x  = xn * W;
-                const y  = midY + waveNorm(xn, ph) * amp;
+                const x = xn * W;
+                const y = midY + waveNorm(xn, ph) * amp;
                 s === 0 ? ctx2.moveTo(x, y) : ctx2.lineTo(x, y);
             }
             ctx2.strokeStyle = `rgba(91,140,255,${0.055 / g})`;
-            ctx2.lineWidth   = 2 + g * 7;
+            ctx2.lineWidth = 2 + g * 7;
             ctx2.lineCap = ctx2.lineJoin = 'round';
             ctx2.stroke();
         }
@@ -367,12 +371,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         ctx2.beginPath();
         for (let s = 0; s <= STEPS; s++) {
             const xn = s / STEPS;
-            const x  = xn * W;
-            const y  = midY + waveNorm(xn, ph) * amp;
+            const x = xn * W;
+            const y = midY + waveNorm(xn, ph) * amp;
             s === 0 ? ctx2.moveTo(x, y) : ctx2.lineTo(x, y);
         }
         ctx2.strokeStyle = grad;
-        ctx2.lineWidth   = 2.8;
+        ctx2.lineWidth = 2.8;
         ctx2.lineCap = ctx2.lineJoin = 'round';
         ctx2.stroke();
 
@@ -380,15 +384,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         ctx2.beginPath();
         for (let s = 0; s <= STEPS; s++) {
             const xn = s / STEPS;
-            const x  = xn * W;
-            const y  = midY + waveNorm(xn, ph) * amp;
+            const x = xn * W;
+            const y = midY + waveNorm(xn, ph) * amp;
             s === 0 ? ctx2.moveTo(x, y) : ctx2.lineTo(x, y);
         }
         ctx2.lineTo(W, H); ctx2.lineTo(0, H); ctx2.closePath();
         const fill = ctx2.createLinearGradient(0, midY - amp, 0, H);
-        fill.addColorStop(0,   'rgba(91,140,255,0.07)');
+        fill.addColorStop(0, 'rgba(91,140,255,0.07)');
         fill.addColorStop(0.6, 'rgba(91,140,255,0.02)');
-        fill.addColorStop(1,   'rgba(91,140,255,0)');
+        fill.addColorStop(1, 'rgba(91,140,255,0)');
         ctx2.fillStyle = fill; ctx2.fill();
 
         // Above-fill
@@ -396,8 +400,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         ctx2.moveTo(0, 0); ctx2.lineTo(W, 0);
         for (let s = STEPS; s >= 0; s--) {
             const xn = s / STEPS;
-            const x  = xn * W;
-            const y  = midY + waveNorm(xn, ph) * amp;
+            const x = xn * W;
+            const y = midY + waveNorm(xn, ph) * amp;
             ctx2.lineTo(x, y);
         }
         ctx2.closePath();
@@ -411,7 +415,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     function resize() {
         W = sineCanvas.parentElement.clientWidth;
         H = sineCanvas.parentElement.clientHeight;
-        sineCanvas.width  = W;
+        sineCanvas.width = W;
         sineCanvas.height = H;
         build();
         drawWave(phase);
@@ -432,4 +436,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     resize();
     animate();
+
+    // Rebuild on language change
+    document.addEventListener('langchange', () => {
+        EVENTS = getEvents();
+        initiated = false;
+        resize();
+    });
 })();
