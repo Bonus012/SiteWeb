@@ -45,6 +45,14 @@ const TRANSLATIONS = {
 
         // FOOTER
         footer_copy: "© 2025 — Elouan Bouché",
+        // CONTACT PAGE
+        contact_page_title: "Contact — Elouan Bouché",
+        contact_label: "Prendre contact",
+        contact_title: "Travaillons<br>ensemble.",
+        contact_sub: "Disponible pour des collaborations, des opportunités de stage ou simplement pour échanger autour du dev et du jeu vidéo.",
+        contact_divider: "ou",
+        contact_btn: "Envoyer un message",
+        contact_linkedin_handle: "Elouan Bouché",
 
         // PROJET PAGE
         proj_page_title: "Projets - Elouan Bouché",
@@ -114,6 +122,14 @@ const TRANSLATIONS = {
 
         // FOOTER
         footer_copy: "© 2025 — Elouan Bouché",
+        // CONTACT PAGE
+        contact_page_title: "Contact — Elouan Bouché",
+        contact_label: "Get in touch",
+        contact_title: "Let's work<br>together.",
+        contact_sub: "Available for collaborations, internship opportunities, or just to chat about dev and game design.",
+        contact_divider: "or",
+        contact_btn: "Send a message",
+        contact_linkedin_handle: "Elouan Bouché",
 
         // PROJET PAGE
         proj_page_title: "Projects - Elouan Bouché",
@@ -167,10 +183,13 @@ function updateLangButtons() {
 function applyTranslations() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
+        const val = t(key);
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            el.placeholder = t(key);
+            el.placeholder = val;
+        } else if (val.includes('<')) {
+            el.innerHTML = val;
         } else {
-            el.textContent = t(key);
+            el.textContent = val;
         }
     });
     // Titre de page
