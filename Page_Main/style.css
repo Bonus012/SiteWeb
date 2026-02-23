@@ -1537,4 +1537,9 @@ html {
     .minigame-panel.open {
         max-height: 500px;
     }
+
+    .minigame-frame {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
 }
