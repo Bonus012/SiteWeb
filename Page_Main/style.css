@@ -425,7 +425,7 @@ html {
 =========================== */
 .about-wrapper {
     max-width: 1120px;
-    margin: 3rem auto;
+    margin: 3rem auto 0;
     padding: 0;
 }
 
@@ -583,7 +583,7 @@ html {
 =========================== */
 .journey-wrapper {
     max-width: 1120px;
-    margin: 4rem auto;
+    margin: 0 auto;
     padding: 3rem clamp(1.5rem, 4vw, 4rem);
     background: rgba(15, 23, 42, 0.55);
     border: 1px solid rgba(148, 163, 184, 0.25);
@@ -1166,4 +1166,349 @@ html {
     .timeline-item {
         min-width: 200px;
     }
+}
+
+/* ===========================
+   MINI GAME
+=========================== */
+.minigame-wrapper {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ── Preview ── */
+.minigame-preview {
+    cursor: pointer;
+    padding: 0.4rem;
+    opacity: 0.3;
+    transition: opacity 0.25s, transform 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .minigame-preview:hover {
+        opacity: 0.85;
+        transform: translateY(-2px);
+    }
+
+#previewCanvas {
+    image-rendering: pixelated;
+    display: block;
+}
+
+/* ── Game panel ── */
+.minigame-panel {
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+    padding: 0 5px;
+}
+
+    .minigame-panel.open {
+        max-height: 200px;
+        opacity: 1;
+        padding: 5px;
+    }
+
+.minigame-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.35rem 0.9rem;
+    background: rgba(10, 14, 26, 0.6);
+    border: 1px solid rgba(91,140,255,0.12);
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.minigame-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: rgba(91,140,255,0.45);
+}
+
+.minigame-hint {
+    color: rgba(148,163,184,0.3);
+    font-size: 0.6rem;
+}
+
+    .minigame-hint kbd {
+        background: rgba(91,140,255,0.08);
+        border: 1px solid rgba(91,140,255,0.18);
+        border-radius: 3px;
+        padding: 0 4px;
+        font-family: monospace;
+        color: rgba(91,140,255,0.45);
+        font-size: 0.6rem;
+    }
+
+.close-game {
+    cursor: pointer;
+    color: rgba(148,163,184,0.35);
+    transition: color 0.2s;
+}
+
+    .close-game:hover {
+        color: rgba(148,163,184,0.8);
+    }
+
+.minigame-score-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+}
+
+.score-label {
+    color: rgba(148,163,184,0.3);
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+}
+
+.score-value {
+    color: rgba(91,140,255,0.55);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    min-width: 4ch;
+}
+
+.minigame-frame {
+    position: relative;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    border: 1px solid rgba(91,140,255,0.12);
+    background: #07090f;
+    cursor: pointer;
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+.game-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(7, 9, 15, 0.5);
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+    .game-overlay.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+#overlayMsg {
+    color: rgba(91,140,255,0.65);
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+    letter-spacing: 0.15em;
+    animation: blink 1.4s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+50% {
+    opacity: 0;
+}
+
+}
+
+50% {
+    opacity: 0;
+}
+
+}
+
+/* ── Name form & leaderboard ── */
+.name-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.6rem 1rem;
+}
+
+.name-form-inner {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: center;
+}
+
+.name-form-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    align-items: flex-start;
+    min-width: 140px;
+}
+
+.name-score {
+    font-family: 'Courier New', monospace;
+    font-size: 0.6rem;
+    color: rgba(148,163,184,0.4);
+    letter-spacing: 0.1em;
+}
+
+    .name-score span {
+        color: rgba(91,140,255,0.8);
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+.name-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    color: rgba(148,163,184,0.5);
+}
+
+.name-input-row {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.name-input {
+    background: rgba(91,140,255,0.08);
+    border: 1px solid rgba(91,140,255,0.3);
+    border-radius: 5px;
+    color: #5b8cff;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    padding: 0.2rem 0.5rem;
+    width: 70px;
+    text-align: center;
+    outline: none;
+    text-transform: uppercase;
+}
+
+    .name-input:focus {
+        border-color: rgba(91,140,255,0.7);
+        background: rgba(91,140,255,0.12);
+    }
+
+.name-btn {
+    background: rgba(91,140,255,0.15);
+    border: 1px solid rgba(91,140,255,0.35);
+    border-radius: 5px;
+    color: rgba(91,140,255,0.8);
+    font-family: 'Courier New', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.6rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .name-btn:hover {
+        background: rgba(91,140,255,0.25);
+    }
+
+    .name-btn:disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+
+.name-form-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 160px;
+}
+
+.lb-title {
+    font-family: 'Courier New', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: rgba(148,163,184,0.35);
+    margin-bottom: 0.2rem;
+}
+
+.lb-scores {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.lb-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    font-size: 0.65rem;
+}
+
+.lb-rank {
+    color: rgba(168,85,247,0.5);
+    width: 1.5ch;
+}
+
+.lb-name {
+    color: rgba(245,245,245,0.6);
+    flex: 1;
+    letter-spacing: 0.1em;
+}
+
+.lb-score {
+    color: rgba(91,140,255,0.7);
+    font-weight: 700;
+}
+
+.name-retry {
+    background: rgba(91,140,255,0.12);
+    border: 1px solid rgba(91,140,255,0.25);
+    border-radius: 5px;
+    color: rgba(91,140,255,0.65);
+    font-family: 'Courier New', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+    .name-retry:hover {
+        background: rgba(91,140,255,0.2);
+        color: rgba(91,140,255,0.9);
+    }
+
+.name-input.invalid {
+    border-color: rgba(239,68,68,0.7) !important;
 }

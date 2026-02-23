@@ -83,6 +83,34 @@
         </div>
     </section>
 
+    <!-- MINI GAME -->
+    <section class="minigame-wrapper">
+        <!-- Preview : petit perso cliquable -->
+        <div id="gamePreview" class="minigame-preview">
+            <canvas id="previewCanvas" width="24" height="34"></canvas>
+        </div>
+
+        <!-- Jeu : masqué par défaut -->
+        <div id="gamePanel" class="minigame-panel">
+            <div class="minigame-topbar">
+                <span class="minigame-label">▶ MINI JEU</span>
+                <div class="minigame-score-row">
+                    <span class="score-label">SCORE</span>
+                    <span class="score-value" id="scoreDisplay">00000</span>
+                    <span class="score-label">BEST</span>
+                    <span class="score-value" id="hiScoreDisplay">00000</span>
+                </div>
+                <span class="minigame-hint"><kbd>Espace</kbd> / clic pour sauter &nbsp;·&nbsp; <span id="closeGame" class="close-game">✕ Fermer</span></span>
+            </div>
+            <div class="minigame-frame">
+                <canvas id="gameCanvas" width="1120" height="120"></canvas>
+                <div class="game-overlay" id="gameOverlay">
+                    <span id="overlayMsg">CLIQUE POUR JOUER</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- JOURNEY -->
     <section id="journey" class="journey-wrapper">
         <div class="glow-orb glow-orb-1"></div>
@@ -166,5 +194,6 @@
 
     <script src="Page_Main/lang.js"></script>
     <script src="Page_Main/script.js"></script>
+    <script src="Game/Game.js"></script>
 </body>
 </html>
