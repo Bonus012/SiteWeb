@@ -1173,11 +1173,13 @@ html {
 =========================== */
 .minigame-wrapper {
     max-width: 1120px;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
 
 /* ── Preview ── */
@@ -1204,16 +1206,18 @@ html {
 /* ── Game panel ── */
 .minigame-panel {
     width: 100%;
+    max-width: 100%;
     flex-direction: column;
     overflow: hidden;
     max-height: 0;
     opacity: 0;
     transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
     padding: 0 5px;
+    box-sizing: border-box;
 }
 
     .minigame-panel.open {
-        max-height: 200px;
+        max-height: 500px;
         opacity: 1;
         padding: 5px;
     }
@@ -1227,8 +1231,11 @@ html {
     border: 1px solid rgba(91,140,255,0.12);
     border-bottom: none;
     border-radius: 8px 8px 0 0;
-    gap: 1rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .minigame-label {
@@ -1288,16 +1295,19 @@ html {
 .minigame-frame {
     position: relative;
     width: 100%;
+    max-width: 100%;
     border-radius: 0 0 8px 8px;
     overflow: hidden;
     border: 1px solid rgba(91,140,255,0.12);
     background: #07090f;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 #gameCanvas {
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
     image-rendering: pixelated;
 }
@@ -1511,4 +1521,20 @@ html {
 
 .name-input.invalid {
     border-color: rgba(239,68,68,0.7) !important;
+}
+
+@media (max-width: 768px) {
+    .minigame-topbar {
+        gap: 0.3rem;
+        padding: 0.3rem 0.5rem;
+        font-size: 0.5rem;
+    }
+
+    .minigame-hint {
+        display: none;
+    }
+
+    .minigame-panel.open {
+        max-height: 500px;
+    }
 }
