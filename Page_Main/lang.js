@@ -80,6 +80,14 @@ const TRANSLATIONS = {
         p9_desc: "Le but de ce projet était de créer un FPS satisfaisant, centré sur des sensations de tir percutantes et un maximum de feedback visuel et sonore. Nous avons réparti le travail de manière complémentaire : je me suis occupé de toute la gestion des armes et du système de tir, ainsi que de la boutique d'armes et du système d'équipement modulaire, tandis que mon coéquipier a conçu la map et développé le robot ennemi ainsi que son comportement de mort. Ensemble, nous avons construit une expérience dynamique et cohérente, où chaque élément contribue à renforcer le feeling du gameplay.",
         p10_desc: "Shooter réalisé à trois, entièrement en C++ avec SFML. Assets faits maison. Je me suis occupé des collisions, du combat, du système de vie, du boss, des crédits et de la DA.",
         p11_desc: "Ce projet réalisé avec SFML consistait à développer un petit jeu en 2D reposant sur une gestion précise des tiles et de l'environnement. J'ai pris en charge la mise en place du système de tuiles, ainsi que les mécaniques de creusage, de coupe d'arbres et de minage. Puis pour finir, j'ai travaillé sur les animaux et leur IA, ce qui a permis de donner vie au monde et d'enrichir l'expérience de jeu.",
+
+        // EASTER EGG — Lapin
+        rabbit_bubble: "🥚 Clique pour la chasse !",
+        rabbit_hud_label: "🥚 Trouve les œufs !",
+        rabbit_hud_close: "✕ Quitter",
+        rabbit_win_title: "🐰 Félicitations !",
+        rabbit_win_sub: "Tu as trouvé tous les œufs de Pâques !",
+        rabbit_win_btn: "Retourner au site ✨",
     },
     en: {
         // NAV
@@ -157,6 +165,14 @@ const TRANSLATIONS = {
         p9_desc: "The goal was to create a satisfying FPS focused on impactful shooting sensations and maximum visual and audio feedback. We split the work: I handled all weapon management and shooting systems, as well as the weapon shop and modular equipment system, while my teammate designed the map and built the enemy robot with its death behavior. Together we crafted a dynamic and coherent experience where every element reinforces gameplay feel.",
         p10_desc: "Shooter made by a team of three, entirely in C++ with SFML. Handmade assets. I handled collisions, combat, health system, boss, credits and art direction.",
         p11_desc: "This SFML project involved building a 2D game with precise tile and environment management. I set up the tile system along with digging, tree-cutting and mining mechanics. I then worked on animals and their AI, bringing the world to life and enriching the gameplay experience.",
+
+        // EASTER EGG — Rabbit
+        rabbit_bubble: "🥚 Click to start the hunt!",
+        rabbit_hud_label: "🥚 Find the eggs!",
+        rabbit_hud_close: "✕ Quit",
+        rabbit_win_title: "🐰 Congratulations!",
+        rabbit_win_sub: "You found all the Easter eggs!",
+        rabbit_win_btn: "Back to the site ✨",
     }
 };
 
