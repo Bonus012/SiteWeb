@@ -394,7 +394,7 @@
 
   const bubble = document.createElement("div");
   bubble.id = "ef-bubble";
-  bubble.textContent = (typeof t === "function") ? t("rabbit_bubble") : "🥚 Clique pour la chasse !";
+  bubble.textContent = "";
   document.body.appendChild(bubble);
 
   /* ══════════════════════════════════════════
@@ -425,7 +425,7 @@
     <div class="ef-win-card">
       <div class="ef-win-title" id="ef-win-title">🐰 Félicitations !</div>
       <div class="ef-win-sub" id="ef-win-sub">Tu as trouvé tous les œufs de Pâques !</div>
-      <div class="ef-win-row">🥚🥚🥚🥚🥚</div>
+      <div class="ef-win-row">🥚🌸🥚🌸🥚</div>
       <button class="ef-win-btn" id="ef-win-close">Retourner au site ✨</button>
     </div>
   `;
@@ -449,8 +449,15 @@
     if (winBtn)   winBtn.textContent   = t("rabbit_win_btn");
   }
 
-  // DOMContentLoaded est déjà passé (script en bas de body), on appelle directement
-  setTimeout(applyRabbitLang, 0);
+  // Attendre que t() soit disponible (lang.js chargé), puis appliquer
+  function waitForLang() {
+    if (typeof t === "function" && typeof TRANSLATIONS !== "undefined") {
+      applyRabbitLang();
+    } else {
+      setTimeout(waitForLang, 30);
+    }
+  }
+  waitForLang();
   // Réagir aux changements de langue
   document.addEventListener("langchange", applyRabbitLang);
 
