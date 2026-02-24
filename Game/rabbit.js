@@ -449,8 +449,8 @@
     if (winBtn)   winBtn.textContent   = t("rabbit_win_btn");
   }
 
-  // Appliquer au chargement (après que lang.js ait initialisé)
-  document.addEventListener("DOMContentLoaded", applyRabbitLang);
+  // DOMContentLoaded est déjà passé (script en bas de body), on appelle directement
+  setTimeout(applyRabbitLang, 0);
   // Réagir aux changements de langue
   document.addEventListener("langchange", applyRabbitLang);
 
@@ -470,6 +470,8 @@
       rabbit.classList.add("show");
       clearTimeout(bubbleTimer);
       bubbleTimer = setTimeout(() => {
+        // Rafraîchir le texte au moment d'afficher (t() est forcément dispo)
+        if (typeof t === "function") bubble.textContent = t("rabbit_bubble");
         bubble.classList.add("show");
         bubbleTimer = setTimeout(() => bubble.classList.remove("show"), 3500);
       }, 700);
