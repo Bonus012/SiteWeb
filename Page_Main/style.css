@@ -1217,7 +1217,7 @@ html {
 }
 
     .minigame-panel.open {
-        max-height: 500px;
+        max-height: 800px;
         opacity: 1;
         padding: 5px;
     }
@@ -1476,6 +1476,27 @@ html {
     gap: 0.15rem;
 }
 
+.lb-scrollable {
+    max-height: 80px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(91,140,255,0.3) transparent;
+    padding-right: 4px;
+}
+
+    .lb-scrollable::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .lb-scrollable::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .lb-scrollable::-webkit-scrollbar-thumb {
+        background: rgba(91,140,255,0.3);
+        border-radius: 2px;
+    }
+
 .lb-row {
     display: flex;
     gap: 0.5rem;
@@ -1535,7 +1556,7 @@ html {
     }
 
     .minigame-panel.open {
-        max-height: 500px;
+        max-height: 800px;
     }
 
     .minigame-frame {
